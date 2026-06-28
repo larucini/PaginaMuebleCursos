@@ -268,7 +268,7 @@ nav.scrolled {
 /* ─── INFO CARDS ─────────────────────────────── */
 .crs-info-band {
   background: var(--cream);
-  padding: 40px 60px 80px;
+  padding: 40px 60px 150px;
   max-width: 1220px;
   margin: 0 auto;
   display: grid;
