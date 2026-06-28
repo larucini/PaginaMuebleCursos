@@ -7,7 +7,7 @@ window.addEventListener('scroll', () => {
 // ── Hero load animation ─────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   const hero = document.getElementById('crs-hero');
-  setTimeout(() => hero.classList.add('loaded'), 100);
+  if (hero) setTimeout(() => hero.classList.add('loaded'), 100);
 });
 
 // ── Fade-up on scroll ───────────────────────
@@ -21,6 +21,3 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
 fadeEls.forEach(el => observer.observe(el));
-
-// ── Flip stat cards on click (if desktop) ──
-// (kept consistent with index.html behavior)
