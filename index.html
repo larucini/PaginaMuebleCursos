@@ -22,47 +22,63 @@
   </ul>
 </nav>
 
-<!-- HERO: TRES IMÁGENES -->
+<!-- HERO: TIMELINE + TRES IMÁGENES PROGRESIVAS -->
 <section class="crs-hero" id="crs-hero">
-  <div class="crs-hero-imgs fade-up">
 
-    <div class="crs-hero-img-item">
-      <div class="crs-hero-img-frame">
-        <div class="crs-hero-img-ph">
-          <div class="crs-hero-img-ph-inner">
-            <div class="crs-hero-img-ph-line"></div>
-            <span class="crs-hero-img-ph-text">Foto 1</span>
-          </div>
-        </div>
-      </div>
-      <div class="crs-hero-img-label"><span>Estado<br>inicial</span></div>
+  <!-- Línea de tiempo -->
+  <div class="crs-timeline">
+    <div class="crs-timeline-track">
+      <div class="crs-timeline-fill" id="timeline-fill"></div>
     </div>
 
-    <div class="crs-hero-img-item">
-      <div class="crs-hero-img-frame">
-        <div class="crs-hero-img-ph">
-          <div class="crs-hero-img-ph-inner">
-            <div class="crs-hero-img-ph-line"></div>
-            <span class="crs-hero-img-ph-text">Foto 2</span>
-          </div>
-        </div>
+    <!-- Nodo 1: Estado inicial -->
+    <div class="crs-tl-node" id="node-1" style="left: 20%;">
+      <div class="crs-tl-circle">
+        <div class="crs-tl-circle-fill"></div>
+        <span class="crs-tl-label">Estado<br>inicial</span>
       </div>
-      <div class="crs-hero-img-label"><span>Estudio</span></div>
     </div>
 
-    <div class="crs-hero-img-item">
-      <div class="crs-hero-img-frame">
-        <div class="crs-hero-img-ph">
-          <div class="crs-hero-img-ph-inner">
-            <div class="crs-hero-img-ph-line"></div>
-            <span class="crs-hero-img-ph-text">Foto 3</span>
-          </div>
-        </div>
+    <!-- Nodo 2: Estudio -->
+    <div class="crs-tl-node" id="node-2" style="left: 50%;">
+      <div class="crs-tl-circle">
+        <div class="crs-tl-circle-fill"></div>
+        <span class="crs-tl-label">Estudio</span>
       </div>
-      <div class="crs-hero-img-label"><span>Final</span></div>
+    </div>
+
+    <!-- Nodo 3: Final -->
+    <div class="crs-tl-node" id="node-3" style="left: 80%;">
+      <div class="crs-tl-circle">
+        <div class="crs-tl-circle-fill"></div>
+        <span class="crs-tl-label">Final</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Imágenes -->
+  <div class="crs-hero-imgs">
+
+    <div class="crs-hero-img-item" id="img-1">
+      <div class="crs-hero-img-frame">
+        <img src="assets/silla-inicial.png" alt="Estado inicial">
+      </div>
+    </div>
+
+    <div class="crs-hero-img-item" id="img-2">
+      <div class="crs-hero-img-frame">
+        <img src="assets/silla-estudio.png" alt="Estudio">
+      </div>
+    </div>
+
+    <div class="crs-hero-img-item" id="img-3">
+      <div class="crs-hero-img-frame">
+        <img src="assets/silla-final.png" alt="Final">
+      </div>
     </div>
 
   </div>
+
 </section>
 
 <!-- HERO TEXTO -->
