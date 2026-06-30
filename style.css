@@ -542,10 +542,10 @@ nav.scrolled {
 }
 
 /* ─── APRENDIZAJE ───────────────────────────── */
-/* ─── QUÉ APRENDERÁS — FLIPCARDS ────────────── */
+/* ─── QUÉ APRENDERÁS — STICKY STACKING CARDS ── */
 .crs-learn {
   background: #efece3;
-  padding: 100px 80px 120px;
+  padding: 100px 80px 40px;
   position: relative;
 }
 .crs-learn-inner {
@@ -554,7 +554,7 @@ nav.scrolled {
 }
 .crs-learn-header {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 .crs-learn-heading {
   font-family: 'Raleway', sans-serif;
@@ -564,95 +564,60 @@ nav.scrolled {
   line-height: 1.1;
   color: var(--espresso);
 }
-.crs-learn-row {
-  display: flex;
-  gap: 32px;
-  justify-content: center;
-  margin-bottom: 32px;
-}
-.crs-learn-row:last-of-type { margin-bottom: 0; }
-.crs-fc-wrap {
+
+.crs-stack-scroll {
   position: relative;
-  width: 360px;
-  flex-shrink: 0;
-  padding-top: 80px;
+  height: calc((var(--stack-count) + 0.4) * 100vh);
 }
-.crs-fc-num {
-  position: absolute;
+.crs-stack-viewport {
+  position: sticky;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 160px;
-  font-weight: 500;
-  line-height: 1;
-  color: #332116;
-  z-index: 2;
-  pointer-events: none;
-  width: 100%;
-  text-align: center;
-}
-.crs-fc-num-outline {
-  display: none;
-}
-.crs-fc-card {
-  position: relative;
-  width: 360px;
-  height: 420px;
-  background: #a3af8c;
-  border-radius: 4px;
+  height: 100vh;
   overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
 }
-.crs-fc-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(57,47,40,0.22);
-}
-.crs-fc-icon {
-  display: none;
-}
-.crs-fc-front {
+.crs-stack-card {
   position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 0 28px 40px;
-  z-index: 2;
-  transition: opacity 0.35s ease;
+  top: 50%;
+  left: 50%;
+  width: min(1180px, 94vw);
+  height: min(58vh, 560px);
+  overflow: auto;
+  box-sizing: border-box;
+  background: var(--cream);
+  border: 1px solid rgba(57,47,40,0.16);
+  border-radius: 32px;
+  padding: 64px 72px 96px;
+  /* posición inicial; el resto lo controla el scroll vía JS (solo transform/z-index, sin fade) */
+  transform: translate(-50%, calc(-50% + 100vh));
+  opacity: 1;
+  z-index: 1;
+  will-change: transform;
 }
-.crs-fc-card:hover .crs-fc-front { opacity: 0; }
-.crs-fc-title {
-  font-family: 'Raleway', sans-serif;
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  color: #efece3;
-  text-align: center;
-  line-height: 1.3;
-}
-.crs-fc-back {
-  position: absolute;
-  inset: 0;
-  background: rgba(57,47,40,0.82);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 36px 32px;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  z-index: 4;
-}
-.crs-fc-card:hover .crs-fc-back { opacity: 1; }
-.crs-fc-desc {
-  font-family: 'Raleway', sans-serif;
-  font-size: 14px;
+.crs-stack-num {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
+  font-size: 64px;
+  line-height: 1;
+  color: var(--espresso);
+  margin-bottom: 20px;
+}
+.crs-stack-title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: clamp(22px, 2.4vw, 30px);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--espresso);
+  margin-bottom: 18px;
+}
+.crs-stack-desc {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
   line-height: 1.7;
-  color: rgba(239,236,227,0.85);
-  text-align: center;
+  color: rgba(57,47,40,0.72);
+  max-width: 620px;
 }
 
 /* ─── GALERIA ───────────────────────────────── */
@@ -1072,9 +1037,17 @@ select.form-input option { background: var(--near-black); color: var(--cream); }
   .crs-concepto { grid-template-columns: 1fr; gap: 60px; padding: 80px 20px; }
   .crs-concepto-quote { position: static; margin-top: 24px; }
 
-  .crs-learn { padding: 80px 20px; }
-  .crs-learn-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
-  .crs-learn-grid { grid-template-columns: 1fr; gap: 2px; }
+  .crs-learn { padding: 70px 16px 20px; }
+  .crs-learn-header { margin-bottom: 28px; }
+  .crs-stack-card {
+    width: 94vw;
+    height: 52vh;
+    padding: 40px 28px 56px;
+    border-radius: 22px;
+  }
+  .crs-stack-num { font-size: 46px; margin-bottom: 12px; }
+  .crs-stack-title { font-size: 20px; margin-bottom: 12px; }
+  .crs-stack-desc { font-size: 15px; line-height: 1.6; }
 
   .crs-galeria { padding: 60px 0; }
   .crs-galeria-header { padding: 0 20px; }
