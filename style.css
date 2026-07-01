@@ -48,6 +48,17 @@ nav.scrolled {
   transform: translateY(-50%);
   display: flex;
   align-items: center;
+  width: 56px;
+  aspect-ratio: 1067.59 / 366.67;
+  background-color: #332116;
+  -webkit-mask-image: url('assets/raiz-logo.svg');
+  mask-image: url('assets/raiz-logo.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: left center;
+  mask-position: left center;
 }
 .nav-links {
   display: flex;
@@ -270,9 +281,9 @@ nav.scrolled {
 .crs-hero-title {
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
-  font-size: clamp(36px, 5.5vw, 72px);
-  line-height: 0.97;
-  letter-spacing: -0.03em;
+  font-size: clamp(34px, 4.4vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   color: var(--espresso);
   text-transform: uppercase;
   margin-bottom: 24px;
@@ -290,7 +301,7 @@ nav.scrolled {
 /* ─── INFO CARDS ─────────────────────────────── */
 .crs-info-band {
   background: var(--cream);
-  padding: 40px 60px 150px;
+  padding: 40px 60px 120px;
   max-width: 1220px;
   margin: 0 auto;
   display: grid;
@@ -339,6 +350,31 @@ nav.scrolled {
   color: var(--espresso);
   line-height: 1.1;
   transition: color 0.25s ease;
+}
+
+/* ─── HERO CTA ───────────────────────────────── */
+.crs-hero-cta-wrap {
+  margin: 20px 0 28px;
+}
+.crs-hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--espresso);
+  border: 1px solid var(--espresso);
+  border-radius: 40px;
+  padding: 16px 40px;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.crs-hero-cta-btn:hover {
+  background: var(--espresso);
+  color: var(--cream);
 }
 
 /* ─── RESEÑAS / CARRUSEL ─────────────────────── */
@@ -1155,10 +1191,18 @@ nav.scrolled {
   gap: 24px;
 }
 .crs-contact-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 20px;
-  color: rgba(239,236,227,0.5);
+  display: inline-flex;
+  width: 52px;
+  aspect-ratio: 1067.59 / 366.67;
+  background-color: rgba(239,236,227,0.4);
+  -webkit-mask-image: url('assets/raiz-logo.svg');
+  mask-image: url('assets/raiz-logo.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: left center;
+  mask-position: left center;
 }
 .crs-contact-bottom-links {
   display: flex;
