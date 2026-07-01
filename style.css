@@ -489,7 +489,7 @@ nav.scrolled {
 .crs-reviews-arrow-right { right: 24px; }
 
 @media (max-width: 430px) {
-  .crs-reviews { padding: 0 0 70px; }
+  .crs-reviews { padding: 130px 0 70px; }
   .crs-reviews-header { padding: 0 20px 36px; }
   .crs-review-card { width: 88vw; padding: 36px 28px 30px; border-radius: 20px; }
   .crs-review-quote-mark { font-size: 56px; }
@@ -1221,10 +1221,9 @@ nav.scrolled {
 /* ─── RESPONSIVE ────────────────────────────── */
 
 @media (max-width: 430px) {
-  nav { padding: 20px 16px; }
-  .nav-logo { position: static; transform: none; }
-  .nav-links { gap: 14px; }
-  .nav-links a { font-size: 8px; letter-spacing: 0.1em; }
+  nav { padding: 20px 16px; justify-content: flex-start; }
+  .nav-logo { left: 16px; }
+  .nav-links { display: none; }
   .nav-back { display: none; }
 
   .crs-hero { padding: 100px 20px 0; }
@@ -1243,8 +1242,9 @@ nav.scrolled {
   .crs-info-label { font-size: 10px; letter-spacing: 0.14em; }
   .crs-info-value { font-size: 19px; }
 
-  .crs-workspace { padding: 80px 20px 0; }
+  .crs-workspace { padding: 80px 20px 0; overflow: hidden; }
   .crs-workspace-header { margin-bottom: 40px; }
+  .crs-workspace-img-wrap { transform: scale(1.12); transform-origin: center; }
   .crs-hotspot-dot { width: 11px; height: 11px; }
   .crs-hotspot-tip { font-size: 10px; padding: 6px 10px; }
 
@@ -1264,17 +1264,24 @@ nav.scrolled {
   .crs-galeria { padding: 60px 0; }
   .crs-galeria-header { padding: 0 20px; }
   .crs-galeria-title { white-space: normal; }
-  .crs-galeria-grid { grid-template-columns: 1fr; padding: 0 20px; }
-  .crs-gal-item:nth-child(1) { grid-row: auto; }
+  .crs-galeria-grid { grid-template-columns: 1fr; grid-template-rows: none; padding: 0 20px; gap: 4px; }
+  .crs-gal-item { grid-row: auto !important; }
+  .crs-gal-item img { min-height: 0; height: 190px; }
+  .crs-gal-item:nth-child(1) img { min-height: 0; height: 190px; }
 
   .crs-instructores { padding: 80px 20px; }
-  .crs-team { grid-template-columns: 1fr; gap: 24px; }
-  .crs-team-photo { aspect-ratio: 16/10; max-width: 260px; }
-  .crs-team-names { flex-direction: row; flex-wrap: wrap; gap: 4px 20px; }
-  .crs-team-name { font-size: 34px; }
-  .crs-team-stat { padding: 16px 4px; gap: 16px; }
-  .crs-team-stat-num { width: 100px; }
-  .crs-team-role { padding: 12px 16px; }
+  .crs-team { grid-template-columns: 1fr; gap: 24px; justify-items: center; }
+  .crs-team-names { flex-direction: column; align-items: center; text-align: center; gap: 2px; width: 100%; padding-top: 0; }
+  .crs-team-name { font-size: 26px; justify-content: center; white-space: normal; padding: 6px 0; }
+  .crs-team-photo { aspect-ratio: 2 / 3; width: 100%; max-width: 220px; margin: 0 auto; border: none; }
+  .crs-team-photo-img { height: 100%; object-fit: contain; object-position: center; }
+  .crs-team-details { width: 100%; display: flex; flex-direction: column; align-items: center; }
+  .crs-team-role { font-size: 10px; letter-spacing: 0.03em; padding: 8px 14px; white-space: normal; text-align: center; }
+  .crs-team-stats { width: fit-content; margin: 0 auto; }
+  .crs-team-stat { padding: 12px 4px; gap: 12px; justify-content: flex-start; }
+  .crs-team-stat-num { width: 70px; font-size: 24px; }
+  .crs-team-stat-num.is-word { font-size: 16px; }
+  .crs-team-stat-label { font-size: 11px; }
 
   .crs-cta-final { padding: 100px 20px; }
 
