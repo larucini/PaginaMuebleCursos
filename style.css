@@ -1235,8 +1235,13 @@ nav.scrolled {
   .crs-hero-text { padding: 40px 20px 0; }
   .crs-hero-title { font-size: clamp(28px, 9vw, 44px); }
   .crs-hero-subtitle { font-size: 16px; }
+  .crs-hero-sub { font-size: 15px; line-height: 1.6; }
+  .crs-hero-sub-full { display: none; }
 
   .crs-info-band { grid-template-columns: 1fr 1fr; padding: 28px 20px 56px; gap: 10px; }
+  .crs-info-item { padding: 16px 18px; }
+  .crs-info-label { font-size: 10px; letter-spacing: 0.14em; }
+  .crs-info-value { font-size: 19px; }
 
   .crs-workspace { padding: 80px 20px 0; }
   .crs-workspace-header { margin-bottom: 40px; }
