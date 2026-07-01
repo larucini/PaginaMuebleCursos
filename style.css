@@ -130,7 +130,7 @@ nav.scrolled {
   aspect-ratio: 3/4;
   overflow: hidden;
   position: relative;
-  background: rgba(57,47,40,0.04);
+  background: var(--cream);
   transition: box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .crs-hero-img-item:hover .crs-hero-img-frame {
@@ -144,13 +144,18 @@ nav.scrolled {
   object-position: center top;
   display: block;
 }
+/* Leve zoom solo en la primera y tercera foto (el marco no cambia de tamaño) */
+#img-1 .crs-hero-img-frame img,
+#img-3 .crs-hero-img-frame img {
+  transform: scale(1.15);
+}
 
 /* Timeline */
 .crs-timeline {
   position: relative;
   max-width: 1100px;
   margin: 0 auto 32px;
-  height: 48px;
+  height: 88px;
   display: flex;
   align-items: center;
 }
@@ -175,8 +180,8 @@ nav.scrolled {
   align-items: center;
 }
 .crs-tl-circle {
-  width: 72px;
-  height: 72px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   border: none;
   background: rgba(57,47,40,0.08);
@@ -203,7 +208,7 @@ nav.scrolled {
 }
 .crs-tl-label {
   font-family: 'Raleway', sans-serif;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -301,13 +306,20 @@ nav.scrolled {
   align-items: center;
   text-align: center;
   gap: 4px;
-  background: transparent;
+  background: var(--cream);
+  box-shadow: 0 10px 24px rgba(57,47,40,0.06);
   transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 .crs-info-item:hover {
-  background: rgba(57,47,40,0.04);
-  border-color: rgba(57,47,40,0.28);
-  box-shadow: 4px 4px 0px rgba(163,175,140,0.6);
+  background: var(--sage);
+  border-color: var(--sage);
+  box-shadow: 0 10px 24px rgba(57,47,40,0.06);
+}
+.crs-info-item:hover .crs-info-label {
+  color: rgba(239,236,227,0.75);
+}
+.crs-info-item:hover .crs-info-value {
+  color: var(--cream);
 }
 .crs-info-label {
   font-family: 'Raleway', sans-serif;
@@ -317,6 +329,7 @@ nav.scrolled {
   text-transform: uppercase;
   color: rgba(57,47,40,0.42);
   display: block;
+  transition: color 0.25s ease;
 }
 .crs-info-value {
   font-family: 'Cormorant Garamond', serif;
@@ -325,6 +338,7 @@ nav.scrolled {
   font-style: italic;
   color: var(--espresso);
   line-height: 1.1;
+  transition: color 0.25s ease;
 }
 
 /* ─── RESEÑAS / CARRUSEL ─────────────────────── */
