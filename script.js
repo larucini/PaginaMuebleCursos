@@ -214,14 +214,14 @@ function initTeamSwap() {
   if (!root) return;
 
   const nameButtons = Array.from(root.querySelectorAll('.crs-team-name'));
-  const initialsEl  = document.getElementById('crs-team-initials');
+  const photoEl     = document.getElementById('crs-team-photo-img');
   const roleEl      = document.getElementById('crs-team-role');
   const statsEl     = document.getElementById('crs-team-stats');
 
   const instructors = [
     {
       name: 'Tomás Ferrero',
-      initials: 'TF',
+      photo: 'assets/tomas-ferrero.png',
       role: 'Maestro restaurador de mobiliario',
       stats: [
         { num: '+5', label: 'Años de<br>experiencia' },
@@ -231,7 +231,7 @@ function initTeamSwap() {
     },
     {
       name: 'Lucía Bianchi',
-      initials: 'LB',
+      photo: 'assets/lucia-bianchi.png',
       role: 'Diseñadora industrial y restauradora',
       stats: [
         { num: '+8', label: 'Años de<br>experiencia' },
@@ -241,7 +241,7 @@ function initTeamSwap() {
     },
     {
       name: 'Santiago Ruíz',
-      initials: 'SR',
+      photo: 'assets/santiago-ruiz.png',
       role: 'Ebanista y especialista en maderas macizas',
       stats: [
         { num: '+10', label: 'Años de<br>experiencia' },
@@ -265,13 +265,14 @@ function initTeamSwap() {
 
     const data = instructors[i];
     // Fundido corto para que el cambio de contenido no se sienta como un corte.
-    [initialsEl, roleEl, statsEl].forEach(el => el.classList.add('crs-team-swap-fade'));
+    [photoEl, roleEl, statsEl].forEach(el => el.classList.add('crs-team-swap-fade'));
 
     setTimeout(() => {
-      initialsEl.textContent = data.initials;
+      photoEl.src = data.photo;
+      photoEl.alt = data.name;
       roleEl.textContent = data.role;
       renderStats(data.stats);
-      [initialsEl, roleEl, statsEl].forEach(el => el.classList.remove('crs-team-swap-fade'));
+      [photoEl, roleEl, statsEl].forEach(el => el.classList.remove('crs-team-swap-fade'));
     }, 150);
   }
 
