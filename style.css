@@ -574,7 +574,7 @@ nav.scrolled {
 }
 .crs-workspace-sub {
   font-family: 'Raleway', sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -1244,6 +1244,7 @@ nav.scrolled {
 
   .crs-workspace { padding: 80px 20px 0; overflow: hidden; }
   .crs-workspace-header { margin-bottom: 40px; }
+  .crs-workspace-sub { font-size: 11px; }
   .crs-workspace-img-wrap { transform: scale(1.12); transform-origin: center; }
   .crs-hotspot-dot { width: 11px; height: 11px; }
   .crs-hotspot-tip { font-size: 10px; padding: 6px 10px; }
