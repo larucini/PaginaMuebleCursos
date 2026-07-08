@@ -13,6 +13,22 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 fadeEls.forEach(el => observer.observe(el));
 
+// ── Programa: acordeón de cards con panel de detalle ──
+function initProgramaAccordion() {
+  const entries = Array.from(document.querySelectorAll('.crs-programa-entry'));
+  if (!entries.length) return;
+
+  entries.forEach((entry) => {
+    const btn = entry.querySelector('.crs-programa-item');
+    btn.addEventListener('click', () => {
+      const isOpen = entry.classList.contains('is-open');
+      entry.classList.toggle('is-open', !isOpen);
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded', initProgramaAccordion);
+
 // ── Carrusel de reseñas (loop infinito sin corte) ──
 function initReviewsCarousel() {
   const track = document.getElementById('reviews-track');

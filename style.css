@@ -127,7 +127,7 @@ nav.scrolled {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 65px;
+  margin-top: 105px;
 }
 .crs-hero-title {
   margin: 0 0 24px;
@@ -334,126 +334,154 @@ nav.scrolled {
   color: var(--cream);
 }
 
-/* ─── RESEÑAS / CARRUSEL ─────────────────────── */
-.crs-reviews {
-  background: #332116;
-  padding: 70px 0 110px;
-  overflow: hidden;
-}
-.crs-reviews-header {
-  text-align: center;
-  max-width: 1220px;
+/* ─── PROGRAMA: RESUMEN DEL RECORRIDO ────────── */
+.crs-programa {
+  background: var(--cream);
+  padding: 110px 60px 120px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 60px 56px;
 }
-.crs-reviews-title {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  font-size: clamp(24px, 2.6vw, 36px);
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-  color: var(--cream);
+.crs-programa-header {
+  text-align: center;
+  margin-bottom: 56px;
 }
-.crs-reviews-carousel {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-.crs-reviews-track-wrap {
-  width: 100%;
-  overflow: hidden;
-}
-.crs-reviews-track {
-  display: flex;
-  align-items: stretch;
-  gap: 28px;
-  will-change: transform;
-  transition: transform 0.55s cubic-bezier(0.77, 0, 0.18, 1);
-}
-.crs-review-card {
-  flex: 0 0 auto;
-  width: min(1220px, 84vw);
-  box-sizing: border-box;
-  border: 1px solid rgba(239,236,227,0.25);
-  border-radius: 28px;
-  background: #332116;
-  padding: 56px 64px 44px;
-  display: flex;
-  flex-direction: column;
-  opacity: 0.4;
-  box-shadow: inset 0 0 70px rgba(239,236,227,0.08);
-  transition: opacity 0.55s ease;
-}
-.crs-review-card.active {
-  opacity: 1;
-}
-.crs-review-quote-mark {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 80px;
-  font-weight: 600;
-  line-height: 1;
-  color: var(--sage);
-  margin-bottom: 8px;
-}
-.crs-review-text {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  font-size: 21px;
-  line-height: 1.55;
-  color: var(--cream);
-  max-width: 880px;
-  margin-bottom: 28px;
-}
-.crs-review-name {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--cream);
-}
-.crs-review-city {
+.crs-programa-label {
+  display: block;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
-  font-size: 10px;
-  letter-spacing: 0.16em;
+  font-size: 16px;
+  letter-spacing: 0;
   text-transform: uppercase;
-  color: rgba(239,236,227,0.5);
-  margin-top: 4px;
+  color: #332116;
+  margin-bottom: 10px;
 }
-.crs-reviews-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 1px solid rgba(57,47,40,0.2);
+.crs-programa-title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: clamp(32px, 3.8vw, 46px);
+  letter-spacing: -0.05em;
+  color: #332116;
+  margin: 0 0 18px;
+}
+.crs-programa-sub {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.35;
+  color: #332116;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.crs-programa-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+.crs-programa-entry {
+  display: flex;
+  flex-direction: column;
+}
+.crs-programa-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  border: 1px solid rgba(57,47,40,0.20);
+  border-radius: 999px;
+  padding: 10px 28px 10px 10px;
   background: var(--cream);
-  color: var(--espresso);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
+  transition: border-color 0.25s ease;
+}
+.crs-programa-item:hover {
+  border-color: rgba(57,47,40,0.4);
+}
+.crs-programa-entry.is-open .crs-programa-item {
+  border-color: rgba(57,47,40,0.4);
+}
+.crs-programa-num {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
-}
-.crs-reviews-arrow:hover {
-  background: var(--rust);
-  border-color: var(--rust);
+  width: 72px;
+  height: 52px;
+  border-radius: 999px;
+  background: var(--espresso);
   color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 27px;
 }
-.crs-reviews-arrow-left { left: 24px; }
-.crs-reviews-arrow-right { right: 24px; }
+.crs-programa-text {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  color: #332116;
+}
+
+/* Panel expandible */
+.crs-programa-panel {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  border: 1px solid rgba(57,47,40,0.20);
+  border-radius: 20px;
+  background: var(--cream);
+  box-shadow: inset 0 0 50px rgba(57,47,40,0.06);
+  transition: max-height 0.45s ease, opacity 0.35s ease, margin-top 0.45s ease;
+}
+.crs-programa-entry.is-open .crs-programa-panel {
+  max-height: 320px;
+  opacity: 1;
+  margin-top: 18px;
+}
+.crs-programa-panel-inner {
+  padding: 32px 44px 30px;
+}
+.crs-programa-desc {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(57,47,40,0.75);
+  margin: 0 0 20px;
+}
+.crs-programa-keywords {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.crs-programa-keyword {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #332116;
+  border: 1px solid rgba(57,47,40,0.22);
+  border-radius: 999px;
+  padding: 6px 18px;
+}
+
 
 @media (max-width: 430px) {
-  .crs-reviews { padding: 130px 0 70px; }
-  .crs-reviews-header { padding: 0 20px 36px; }
-  .crs-review-card { width: 88vw; padding: 36px 28px 30px; border-radius: 20px; }
-  .crs-review-quote-mark { font-size: 56px; }
-  .crs-review-text { font-size: 16px; margin-bottom: 20px; }
-  .crs-reviews-arrow { width: 40px; height: 40px; }
-  .crs-reviews-arrow-left { left: 10px; }
-  .crs-reviews-arrow-right { right: 10px; }
+  .crs-programa { padding: 90px 20px 70px; }
+  .crs-programa-header { margin-bottom: 36px; }
+  .crs-programa-sub { font-size: 15px; }
+  .crs-programa-list { gap: 12px; }
+  .crs-programa-item { gap: 14px; padding: 8px 18px 8px 8px; }
+  .crs-programa-num { width: 52px; height: 38px; font-size: 17px; }
+  .crs-programa-text { font-size: 16px; }
+  .crs-programa-entry.is-open .crs-programa-panel { max-height: 420px; margin-top: 12px; }
+  .crs-programa-panel-inner { padding: 24px 22px 22px; }
+  .crs-programa-desc { font-size: 14px; }
 }
 
 /* ─── MARQUEE — separador editorial ─────────── */
