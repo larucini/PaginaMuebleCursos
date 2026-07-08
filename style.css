@@ -127,7 +127,7 @@ nav.scrolled {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 56px;
+  margin-top: 65px;
 }
 .crs-hero-title {
   margin: 0 0 24px;
@@ -250,47 +250,63 @@ nav.scrolled {
   gap: 16px;
 }
 .crs-info-item {
+  position: relative;
+  overflow: hidden;
   border: 1px solid rgba(57,47,40,0.16);
-  border-radius: 999px;
-  padding: 20px 28px;
+  border-radius: 20px;
+  padding: 22px 24px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 4px;
+  gap: 10px;
   background: var(--cream);
   box-shadow: 0 10px 24px rgba(57,47,40,0.06);
-  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transform: translateY(0);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
-.crs-info-item:hover {
-  background: var(--sage);
-  border-color: var(--sage);
-  box-shadow: 0 10px 24px rgba(57,47,40,0.06);
+.crs-info-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(115deg, transparent, rgba(255,255,255,0.55), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.9s ease;
+  pointer-events: none;
 }
-.crs-info-item:hover .crs-info-label {
-  color: rgba(239,236,227,0.75);
+.crs-info-band .crs-info-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(57,47,40,0.28);
+  box-shadow: 0 16px 32px rgba(57,47,40,0.10);
 }
-.crs-info-item:hover .crs-info-value {
-  color: var(--cream);
+.crs-info-item:hover::before {
+  left: 130%;
 }
-.crs-info-label {
+.crs-info-icon {
+  height: 40px;
+  width: auto;
+  max-width: 64px;
+  object-fit: contain;
+  margin-bottom: 2px;
+}
+.crs-info-title {
   font-family: 'Raleway', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.20em;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(57,47,40,0.42);
-  display: block;
-  transition: color 0.25s ease;
-}
-.crs-info-value {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 26.4px;
-  font-weight: 500;
-  font-style: italic;
   color: var(--espresso);
-  line-height: 1.1;
-  transition: color 0.25s ease;
+}
+.crs-info-desc {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #332116;
+  white-space: nowrap;
+  margin: 0;
 }
 
 /* ─── HERO CTA ───────────────────────────────── */
@@ -1176,9 +1192,10 @@ nav.scrolled {
   .crs-hero-slide-handle-btn { width: 30px; height: 30px; }
 
   .crs-info-band { grid-template-columns: 1fr 1fr; padding: 28px 20px 56px; gap: 10px; }
-  .crs-info-item { padding: 16px 18px; }
-  .crs-info-label { font-size: 10px; letter-spacing: 0.14em; }
-  .crs-info-value { font-size: 19px; }
+  .crs-info-item { padding: 22px 14px 18px; }
+  .crs-info-icon { height: 32px; }
+  .crs-info-title { font-size: 12px; letter-spacing: 0.04em; }
+  .crs-info-desc { font-size: 12px; white-space: normal; }
 
   .crs-workspace { padding: 80px 20px 0; overflow: hidden; }
   .crs-workspace-header { margin-bottom: 40px; }
