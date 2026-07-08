@@ -23,81 +23,107 @@
   </ul>
 </nav>
 
-<!-- HERO: TIMELINE + TRES IMÁGENES PROGRESIVAS -->
+<!-- HERO: TEXTO + MARQUEE VERTICAL BEFORE/AFTER -->
 <section class="crs-hero" id="crs-hero">
 
-  <!-- Línea de tiempo -->
-  <div class="crs-timeline">
-    <div class="crs-timeline-track">
-      <div class="crs-timeline-fill" id="timeline-fill"></div>
-    </div>
-
-    <!-- Nodo 1: Estado inicial -->
-    <div class="crs-tl-node" id="node-1" style="left: 20%;">
-      <div class="crs-tl-circle">
-        <div class="crs-tl-circle-fill"></div>
-        <span class="crs-tl-label">Estado<br>inicial</span>
-      </div>
-    </div>
-
-    <!-- Nodo 2: Estudio -->
-    <div class="crs-tl-node" id="node-2" style="left: 50%;">
-      <div class="crs-tl-circle">
-        <div class="crs-tl-circle-fill"></div>
-        <span class="crs-tl-label">Estudio</span>
-      </div>
-    </div>
-
-    <!-- Nodo 3: Final -->
-    <div class="crs-tl-node" id="node-3" style="left: 80%;">
-      <div class="crs-tl-circle">
-        <div class="crs-tl-circle-fill"></div>
-        <span class="crs-tl-label">Final</span>
-      </div>
-    </div>
+  <div class="crs-hero-left">
+    <h1 class="crs-hero-title fade-up">
+      <span class="crs-hero-title-line">Restauración</span>
+      <span class="crs-hero-title-line2"><em class="crs-hero-title-italic">De muebles.</em></span>
+    </h1>
+    <p class="crs-hero-sub fade-up fade-up-d1">
+      Un recorrido por el oficio real: aprender a observar la madera, diagnosticar su estado
+      y tomar decisiones fundamentadas antes de intervenir cualquier pieza.
+    </p>
+    <a href="#contacto" class="crs-hero-cta-btn fade-up fade-up-d2">Inscribirme</a>
   </div>
 
-  <!-- Imágenes -->
-  <div class="crs-hero-imgs">
+  <div class="crs-hero-marquee" id="hero-marquee">
+    <div class="crs-hero-marquee-track" id="hero-marquee-track">
 
-    <div class="crs-hero-img-item" id="img-1">
-      <div class="crs-hero-img-frame">
-        <img src="assets/silla-inicial.png" alt="Estado inicial">
+      <div class="crs-hero-slide" data-before="assets/mesa-nueva.jpg" data-after="assets/mesa-vieja.jpg">
+        <img class="crs-hero-slide-before" src="assets/mesa-nueva.jpg" alt="Mesa restaurada">
+        <div class="crs-hero-slide-after-wrap">
+          <img class="crs-hero-slide-after" src="assets/mesa-vieja.jpg" alt="Mesa antes de restaurar">
+        </div>
+        <div class="crs-hero-slide-handle">
+          <span class="crs-hero-slide-handle-btn">
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M4.5 1L1 5l3.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M7.5 1L11 5l-3.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
       </div>
-    </div>
 
-    <div class="crs-hero-img-item" id="img-2">
-      <div class="crs-hero-img-frame">
-        <img src="assets/silla-estudio.png" alt="Estudio">
+      <div class="crs-hero-slide" data-before="assets/banco-nuevo.jpg" data-after="assets/banco-viejo.jpg">
+        <img class="crs-hero-slide-before" src="assets/banco-nuevo.jpg" alt="Banco restaurado">
+        <div class="crs-hero-slide-after-wrap">
+          <img class="crs-hero-slide-after" src="assets/banco-viejo.jpg" alt="Banco antes de restaurar">
+        </div>
+        <div class="crs-hero-slide-handle">
+          <span class="crs-hero-slide-handle-btn">
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M4.5 1L1 5l3.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M7.5 1L11 5l-3.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
       </div>
-    </div>
 
-    <div class="crs-hero-img-item" id="img-3">
-      <div class="crs-hero-img-frame">
-        <img src="assets/silla-final.png" alt="Final">
+      <div class="crs-hero-slide" data-before="assets/aparador-nuevo.jpg" data-after="assets/aparador-viejo.jpg">
+        <img class="crs-hero-slide-before" src="assets/aparador-nuevo.jpg" alt="Aparador restaurado">
+        <div class="crs-hero-slide-after-wrap">
+          <img class="crs-hero-slide-after" src="assets/aparador-viejo.jpg" alt="Aparador antes de restaurar">
+        </div>
+        <div class="crs-hero-slide-handle">
+          <span class="crs-hero-slide-handle-btn">
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M4.5 1L1 5l3.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M7.5 1L11 5l-3.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
       </div>
-    </div>
 
+      <!-- Ciclo duplicado para loop infinito sin cortes -->
+      <div class="crs-hero-slide" data-before="assets/mesa-nueva.jpg" data-after="assets/mesa-vieja.jpg" aria-hidden="true">
+        <img class="crs-hero-slide-before" src="assets/mesa-nueva.jpg" alt="" aria-hidden="true">
+        <div class="crs-hero-slide-after-wrap">
+          <img class="crs-hero-slide-after" src="assets/mesa-vieja.jpg" alt="" aria-hidden="true">
+        </div>
+        <div class="crs-hero-slide-handle">
+          <span class="crs-hero-slide-handle-btn">
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M4.5 1L1 5l3.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M7.5 1L11 5l-3.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="crs-hero-slide" data-before="assets/banco-nuevo.jpg" data-after="assets/banco-viejo.jpg" aria-hidden="true">
+        <img class="crs-hero-slide-before" src="assets/banco-nuevo.jpg" alt="" aria-hidden="true">
+        <div class="crs-hero-slide-after-wrap">
+          <img class="crs-hero-slide-after" src="assets/banco-viejo.jpg" alt="" aria-hidden="true">
+        </div>
+        <div class="crs-hero-slide-handle">
+          <span class="crs-hero-slide-handle-btn">
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M4.5 1L1 5l3.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M7.5 1L11 5l-3.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="crs-hero-slide" data-before="assets/aparador-nuevo.jpg" data-after="assets/aparador-viejo.jpg" aria-hidden="true">
+        <img class="crs-hero-slide-before" src="assets/aparador-nuevo.jpg" alt="" aria-hidden="true">
+        <div class="crs-hero-slide-after-wrap">
+          <img class="crs-hero-slide-after" src="assets/aparador-viejo.jpg" alt="" aria-hidden="true">
+        </div>
+        <div class="crs-hero-slide-handle">
+          <span class="crs-hero-slide-handle-btn">
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M4.5 1L1 5l3.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M7.5 1L11 5l-3.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+
+    </div>
   </div>
 
 </section>
-
-<!-- HERO TEXTO -->
-<div class="crs-hero-text">
-  <div class="crs-hero-breadcrumb fade-up">
-    RAÍZ <span>/</span> Cursos <span>/</span> Restauración
-  </div>
-  <div class="crs-hero-tag fade-up fade-up-d1">Curso Principal</div>
-  <div class="crs-hero-cta-wrap fade-up fade-up-d1">
-    <a href="#contacto" class="crs-hero-cta-btn">Inscribirme</a>
-  </div>
-  <span class="crs-hero-subtitle fade-up fade-up-d1">Introducción a la</span>
-  <h1 class="crs-hero-title fade-up fade-up-d2">Restauración de Muebles</h1>
-  <p class="crs-hero-sub fade-up fade-up-d3">
-    Un recorrido por el <strong>oficio real</strong>: aprender a observar la madera, diagnosticar su estado<br>
-    y tomar decisiones fundamentadas<span class="crs-hero-sub-full"> antes de intervenir cualquier pieza.</span>
-  </p>
-</div>
 
 <!-- INFO CARDS -->
 <div class="crs-info-band">

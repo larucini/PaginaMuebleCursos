@@ -169,44 +169,69 @@ function initStackScroll() {
 }
 document.addEventListener('DOMContentLoaded', initStackScroll);
 
-// ── Hero timeline animation ──────────────────
-document.addEventListener('DOMContentLoaded', () => {
+// ── Hero: marquee vertical + sliders before/after (drag manual) ──
+function initHeroMarquee() {
+  const marquee = document.getElementById('hero-marquee');
+  if (!marquee) return;
+  const slides = Array.from(marquee.querySelectorAll('.crs-hero-slide'));
 
-  const img1  = document.getElementById('img-1');
-  const img2  = document.getElementById('img-2');
-  const img3  = document.getElementById('img-3');
-  const node1 = document.getElementById('node-1');
-  const node2 = document.getElementById('node-2');
-  const node3 = document.getElementById('node-3');
-  const fill  = document.getElementById('timeline-fill');
+  // Pausar el loop mientras el mouse esté sobre el marquee
+  marquee.addEventListener('mouseenter', () => marquee.classList.add('is-paused'));
+  marquee.addEventListener('mouseleave', () => {
+    marquee.classList.remove('is-paused');
+    marquee.querySelectorAll('.crs-hero-slide-after-wrap').forEach(el => {
+      el.style.clipPath = 'inset(0 50% 0 0)';
+    });
+    marquee.querySelectorAll('.crs-hero-slide-handle').forEach(el => {
+      el.style.left = '50%';
+    });
+  });
+  marquee.addEventListener('touchstart', () => marquee.classList.add('is-paused'), { passive: true });
 
-  if (!img1) return;
+  slides.forEach((slide) => {
+    const afterWrap = slide.querySelector('.crs-hero-slide-after-wrap');
+    const handle    = slide.querySelector('.crs-hero-slide-handle');
+    let dragging = false;
 
-  // Step 1 — imagen 1 + nodo 1
-  setTimeout(() => {
-    img1.classList.add('visible');
-    node1.classList.add('active');
-  }, 300);
+    function setSplit(clientX) {
+      const rect = slide.getBoundingClientRect();
+      let pct = ((clientX - rect.left) / rect.width) * 100;
+      pct = Math.max(0, Math.min(100, pct));
+      afterWrap.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      handle.style.left = pct + '%';
+    }
 
-  // Step 2 — línea + imagen 2 + nodo 2
-  setTimeout(() => {
-    fill.style.width = '50%';
-    setTimeout(() => {
-      img2.classList.add('visible');
-      node2.classList.add('active');
-    }, 400);
-  }, 900);
+    function onMove(e) {
+      if (!dragging) return;
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      setSplit(clientX);
+    }
+    function stopDrag() {
+      dragging = false;
+      slide.classList.remove('is-dragging');
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mouseup', stopDrag);
+      window.removeEventListener('touchmove', onMove);
+      window.removeEventListener('touchend', stopDrag);
+    }
+    function startDrag(e) {
+      dragging = true;
+      slide.classList.add('is-dragging');
+      marquee.classList.add('is-paused');
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      setSplit(clientX);
+      window.addEventListener('mousemove', onMove);
+      window.addEventListener('mouseup', stopDrag);
+      window.addEventListener('touchmove', onMove, { passive: false });
+      window.addEventListener('touchend', stopDrag);
+      e.preventDefault();
+    }
 
-  // Step 3 — línea + imagen 3 + nodo 3
-  setTimeout(() => {
-    fill.style.width = '100%';
-    setTimeout(() => {
-      img3.classList.add('visible');
-      node3.classList.add('active');
-    }, 400);
-  }, 1700);
-
-});
+    slide.addEventListener('mousedown', startDrag);
+    slide.addEventListener('touchstart', startDrag, { passive: false });
+  });
+}
+document.addEventListener('DOMContentLoaded', initHeroMarquee);
 
 // ── Equipo: hover-swap entre instructores ─────
 function initTeamSwap() {
