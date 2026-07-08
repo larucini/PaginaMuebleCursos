@@ -646,6 +646,7 @@ nav.scrolled {
   gap: 18px;
 }
 .crs-inscripcion-feature {
+  position: relative;
   background: var(--cream);
   border-radius: 24px;
   padding: 14px 14px;
@@ -653,12 +654,14 @@ nav.scrolled {
   align-items: center;
   gap: 8px;
   min-height: 150px;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 .crs-inscripcion-feature:hover {
-  background: #e2ddcd;
+  background-color: #e5e1d6;
 }
 .crs-inscripcion-feature-icon-wrap {
+  position: relative;
+  z-index: 1;
   width: 116px;
   display: flex;
   align-items: center;
@@ -671,6 +674,8 @@ nav.scrolled {
   object-fit: contain;
 }
 .crs-inscripcion-feature-text {
+  position: relative;
+  z-index: 1;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -708,174 +713,198 @@ nav.scrolled {
   .crs-inscripcion-feature-text { font-size: 13px; }
 }
 
-/* ─── APRENDIZAJE ───────────────────────────── */
-/* ─── QUÉ APRENDERÁS — STICKY STACKING CARDS ── */
-.crs-learn {
-  background: #332116;
-  padding: 130px 80px 40px;
-  position: relative;
-}
-.crs-learn-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.crs-learn-header {
-  text-align: center;
-  margin-bottom: 12px;
-}
-.crs-learn-heading {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  font-size: clamp(28px, 3vw, 42px);
-  letter-spacing: -0.05em;
-  line-height: 1.1;
-  color: var(--cream);
-}
-
-.crs-stack-scroll {
-  position: relative;
-  height: calc((var(--stack-count) + 0.4) * 100vh);
-}
-.crs-stack-viewport {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow: hidden;
-}
-.crs-stack-card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: min(1180px, 94vw);
-  height: min(58vh, 560px);
-  overflow: auto;
-  box-sizing: border-box;
-  background: var(--cream);
-  border: 1px solid rgba(57,47,40,0.16);
-  border-radius: 32px;
-  padding: 0 72px 96px;
-  /* posición inicial; el resto lo controla el scroll vía JS (solo transform/z-index, sin fade) */
-  transform: translate(-50%, calc(-50% + 100vh));
-  opacity: 1;
-  z-index: 1;
-  will-change: transform;
-}
-.crs-stack-num {
-  display: block;
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
-  font-size: 64px;
-  line-height: 1;
-  color: var(--espresso);
-  margin-bottom: 20px;
-}
-.crs-stack-head {
-  position: relative;
-  margin: 0 -72px 20px;
-  padding: 32px 72px 20px;
-  border-top-left-radius: 32px;
-  border-top-right-radius: 32px;
-  border-bottom: 1px solid rgba(57,47,40,0.22);
-  box-shadow: inset 0 0 40px rgba(57,47,40,0.22);
-}
-.crs-stack-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  font-style: italic;
-  font-size: clamp(38px, 4vw, 52px);
-  letter-spacing: -0.05em;
-  text-transform: none;
-  color: var(--espresso);
-}
-.crs-stack-desc {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  font-size: 19px;
-  line-height: 1.7;
-  color: rgba(57,47,40,0.72);
-  max-width: 620px;
-}
-
-/* ─── GALERIA ───────────────────────────────── */
-.crs-galeria {
+/* ─── MATERIALES ─────────────────────────────── */
+.crs-materiales {
   background: #efece3;
-  padding: 100px 0 80px;
+  padding: 120px 80px 110px;
 }
-.crs-galeria-header {
-  padding: 0 80px;
-  margin-bottom: 56px;
+.crs-materiales-header {
   text-align: center;
+  margin-bottom: 64px;
 }
-.crs-galeria-eyebrow {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(57,47,40,0.45);
+.crs-materiales-label {
   display: block;
-  margin-bottom: 16px;
-}
-.crs-galeria-title {
   font-family: 'Raleway', sans-serif;
-  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #332116;
+  margin-bottom: 10px;
+}
+.crs-materiales-title {
+  font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  letter-spacing: -0.02em;
-  color: var(--espresso);
-  white-space: nowrap;
+  font-size: clamp(32px, 3.8vw, 46px);
+  letter-spacing: -0.05em;
+  color: #332116;
 }
-.crs-galeria-title em {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.3em;
+
+.crs-materiales-tools {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+  max-width: 1200px;
+  margin: 0 auto 130px;
 }
-/* Staggered grid */
-.crs-galeria-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 4px;
-  padding: 0 80px;
+.crs-materiales-tools img {
+  max-height: 180px;
+  width: auto;
+  object-fit: contain;
 }
-.crs-gal-item {
+.crs-mat-tool {
   position: relative;
-  overflow: hidden;
-}
-.crs-gal-item:nth-child(1) { grid-row: 1 / 3; }
-.crs-gal-item:nth-child(2) { grid-row: 1; }
-.crs-gal-item:nth-child(3) { grid-row: 1; }
-.crs-gal-item:nth-child(4) { grid-row: 2; }
-.crs-gal-item:nth-child(5) { grid-row: 2; }
-.crs-gal-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  min-height: 220px;
-  transition: transform 0.6s cubic-bezier(0.77, 0, 0.18, 1);
-}
-.crs-gal-item:nth-child(1) img { min-height: 520px; }
-.crs-gal-item:hover img {
-  transform: scale(1.04);
-}
-.crs-gal-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(33,25,26,0.45);
-  opacity: 0;
-  transition: opacity 0.35s ease;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.crs-gal-item:hover .crs-gal-overlay {
-  opacity: 1;
+.crs-mat-hotspot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.crs-gal-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
+.crs-mat-hotspot-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #a3af8c;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: transform 0.25s ease;
+}
+.crs-mat-hotspot-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid #efece3;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.crs-mat-hotspot--wood .crs-mat-hotspot-dot {
+  background: #efece3;
+  box-shadow: none;
+}
+.crs-mat-hotspot:hover .crs-mat-hotspot-dot {
+  transform: scale(1.2);
+}
+.crs-mat-hotspot-line {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 1px;
+  height: 44px;
+  background: rgba(51,33,22,0.45);
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+.crs-mat-hotspot:hover .crs-mat-hotspot-line {
+  transform: translateX(-50%) scaleY(1);
+}
+.crs-mat-hotspot-card {
+  position: absolute;
+  bottom: calc(100% + 44px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: #332116;
+  color: var(--cream);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: rgba(239,236,227,0.7);
+  white-space: nowrap;
+  padding: 10px 18px;
+  border-radius: 8px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.crs-mat-hotspot:hover .crs-mat-hotspot-card {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.crs-materiales-bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 48px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.crs-materiales-sublabel {
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8c8c8c;
+  margin-bottom: 20px;
+}
+
+.crs-materiales-maderas-grid {
+  display: flex;
+  gap: 36px;
+}
+.crs-materiales-maderas-grid img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+}
+
+.crs-materiales-divider {
+  width: 1px;
+  height: 96px;
+  background: rgba(51,33,22,0.18);
+  margin-top: 40px;
+  flex-shrink: 0;
+}
+
+.crs-materiales-seguridad-grid {
+  display: flex;
+  gap: 20px;
+}
+.crs-materiales-seg-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid rgba(51,33,22,0.25);
+  border-radius: 14px;
+  padding: 12px 16px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+.crs-materiales-seg-item:hover {
+  background-color: #e5e1d6;
+}
+.crs-materiales-seg-item img {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+}
+.crs-materiales-seg-item span {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #332116;
 }
 
 /* ─── INSTRUCTORES ──────────────────────────── */
@@ -1285,26 +1314,13 @@ nav.scrolled {
   .crs-info-title { font-size: 12px; letter-spacing: 0.04em; }
   .crs-info-desc { font-size: 12px; white-space: normal; }
 
-  .crs-learn { padding: 70px 16px 20px; }
-  .crs-learn-header { margin-bottom: 28px; }
-  .crs-stack-card {
-    width: 94vw;
-    height: 52vh;
-    padding: 0 28px 56px;
-    border-radius: 22px;
-  }
-  .crs-stack-num { font-size: 46px; margin-bottom: 12px; }
-  .crs-stack-head { margin: 0 -28px 12px; padding: 40px 28px 12px; border-top-left-radius: 22px; border-top-right-radius: 22px; }
-  .crs-stack-title { font-size: 26px; }
-  .crs-stack-desc { font-size: 15px; line-height: 1.6; }
-
-  .crs-galeria { padding: 60px 0; }
-  .crs-galeria-header { padding: 0 20px; }
-  .crs-galeria-title { white-space: normal; }
-  .crs-galeria-grid { grid-template-columns: 1fr; grid-template-rows: none; padding: 0 20px; gap: 4px; }
-  .crs-gal-item { grid-row: auto !important; }
-  .crs-gal-item img { min-height: 0; height: 190px; }
-  .crs-gal-item:nth-child(1) img { min-height: 0; height: 190px; }
+  .crs-materiales { padding: 70px 20px 60px; }
+  .crs-materiales-header { margin-bottom: 40px; }
+  .crs-materiales-tools { flex-wrap: wrap; gap: 28px; margin-bottom: 56px; }
+  .crs-materiales-tools img { max-height: 110px; }
+  .crs-materiales-bottom { flex-direction: column; align-items: center; gap: 36px; }
+  .crs-materiales-divider { display: none; }
+  .crs-materiales-seguridad-grid { flex-wrap: wrap; justify-content: center; }
 
   .crs-instructores { padding: 80px 20px; }
   .crs-team { grid-template-columns: 1fr; gap: 24px; justify-items: center; }

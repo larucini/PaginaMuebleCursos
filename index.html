@@ -151,7 +151,7 @@
 
 <!-- RESEÑAS -->
 <!-- PROGRAMA: RESUMEN DEL RECORRIDO -->
-<section class="crs-programa">
+<section class="crs-programa" id="programa">
   <div class="crs-programa-header">
     <span class="crs-programa-label fade-up">Programa</span>
     <h2 class="crs-programa-title fade-up fade-up-d1">El recorrido del curso</h2>
@@ -297,82 +297,123 @@
   </div>
 </section>
 
-<!-- QUÉ APRENDERÁS — STICKY STACKING CARDS -->
-<section class="crs-learn" id="programa">
-  <div class="crs-learn-inner">
-    <div class="crs-learn-header">
-      <h2 class="crs-learn-heading fade-up">Todo lo que exploraremos</h2>
+<!-- MATERIALES -->
+<section class="crs-materiales" id="taller">
+  <div class="crs-materiales-header">
+    <span class="crs-materiales-label fade-up">Materiales</span>
+    <h2 class="crs-materiales-title fade-up fade-up-d1">Tu mesa de trabajo</h2>
+  </div>
+
+  <div class="crs-materiales-tools fade-up fade-up-d1">
+    <div class="crs-mat-tool">
+      <img src="assets/mat-formones.png" alt="Formones de tallado">
+      <button type="button" class="crs-mat-hotspot">
+        <span class="crs-mat-hotspot-dot"></span>
+        <span class="crs-mat-hotspot-line"></span>
+        <span class="crs-mat-hotspot-card">Formones de tallado</span>
+      </button>
+    </div>
+    <div class="crs-mat-tool">
+      <img src="assets/mat-escuadra.png" alt="Escuadra de precisión">
+      <button type="button" class="crs-mat-hotspot">
+        <span class="crs-mat-hotspot-dot"></span>
+        <span class="crs-mat-hotspot-line"></span>
+        <span class="crs-mat-hotspot-card">Escuadra de precisión</span>
+      </button>
+    </div>
+    <div class="crs-mat-tool">
+      <img src="assets/mat-cinta.png" alt="Cinta métrica">
+      <button type="button" class="crs-mat-hotspot">
+        <span class="crs-mat-hotspot-dot"></span>
+        <span class="crs-mat-hotspot-line"></span>
+        <span class="crs-mat-hotspot-card">Cinta métrica</span>
+      </button>
+    </div>
+    <div class="crs-mat-tool">
+      <img src="assets/mat-lapiz-cutter.png" alt="Lápiz y cutter">
+      <button type="button" class="crs-mat-hotspot">
+        <span class="crs-mat-hotspot-dot"></span>
+        <span class="crs-mat-hotspot-line"></span>
+        <span class="crs-mat-hotspot-card">Lápiz y cutter</span>
+      </button>
+    </div>
+    <div class="crs-mat-tool">
+      <img src="assets/mat-mazo.png" alt="Mazo de madera y lijas">
+      <button type="button" class="crs-mat-hotspot">
+        <span class="crs-mat-hotspot-dot"></span>
+        <span class="crs-mat-hotspot-line"></span>
+        <span class="crs-mat-hotspot-card">Mazo de madera y lijas</span>
+      </button>
+    </div>
+    <div class="crs-mat-tool">
+      <img src="assets/mat-gubias.png" alt="Gubias y pinceles de acabado">
+      <button type="button" class="crs-mat-hotspot">
+        <span class="crs-mat-hotspot-dot"></span>
+        <span class="crs-mat-hotspot-line"></span>
+        <span class="crs-mat-hotspot-card">Gubias y pinceles de acabado</span>
+      </button>
     </div>
   </div>
 
-  <div class="crs-stack-scroll" id="stack-scroll" style="--stack-count: 4;">
-    <div class="crs-stack-viewport">
+  <div class="crs-materiales-bottom fade-up fade-up-d2">
 
-      <div class="crs-stack-card" data-stack-index="0">
-        <div class="crs-stack-head">
-        <span class="crs-stack-num">01</span>
-        <h3 class="crs-stack-title">Diagnóstico de daños</h3>
+    <div class="crs-materiales-maderas">
+      <span class="crs-materiales-sublabel">Selección de maderas</span>
+      <div class="crs-materiales-maderas-grid">
+        <div class="crs-mat-tool">
+          <img src="assets/madera-1.png" alt="Petiribí">
+          <button type="button" class="crs-mat-hotspot crs-mat-hotspot--wood">
+            <span class="crs-mat-hotspot-ring"></span>
+            <span class="crs-mat-hotspot-dot"></span>
+            <span class="crs-mat-hotspot-line"></span>
+            <span class="crs-mat-hotspot-card">Petiribí</span>
+          </button>
         </div>
-        <p class="crs-stack-desc">Antes de intervenir cualquier pieza, aprendés a observarla con criterio: identificar el tipo de madera, reconocer humedad, plagas, roturas estructurales y desgaste superficial. Esta lectura inicial define todo el plan de restauración.</p>
-      </div>
-
-      <div class="crs-stack-card" data-stack-index="1">
-        <div class="crs-stack-head">
-        <span class="crs-stack-num">02</span>
-        <h3 class="crs-stack-title">Preparación de superficies</h3>
+        <div class="crs-mat-tool">
+          <img src="assets/madera-2.png" alt="Guatambú">
+          <button type="button" class="crs-mat-hotspot crs-mat-hotspot--wood">
+            <span class="crs-mat-hotspot-ring"></span>
+            <span class="crs-mat-hotspot-dot"></span>
+            <span class="crs-mat-hotspot-line"></span>
+            <span class="crs-mat-hotspot-card">Guatambú</span>
+          </button>
         </div>
-        <p class="crs-stack-desc">El resultado final depende de una base bien preparada. Vas a aprender a limpiar, decapar y acondicionar cada superficie según su estado, dejando la madera lista para recibir el tratamiento que necesita.</p>
-      </div>
-
-      <div class="crs-stack-card" data-stack-index="2">
-        <div class="crs-stack-head">
-        <span class="crs-stack-num">03</span>
-        <h3 class="crs-stack-title">Técnicas de lijado</h3>
+        <div class="crs-mat-tool">
+          <img src="assets/madera-3.png" alt="Guayubira">
+          <button type="button" class="crs-mat-hotspot crs-mat-hotspot--wood">
+            <span class="crs-mat-hotspot-ring"></span>
+            <span class="crs-mat-hotspot-dot"></span>
+            <span class="crs-mat-hotspot-line"></span>
+            <span class="crs-mat-hotspot-card">Guayubira</span>
+          </button>
         </div>
-        <p class="crs-stack-desc">Un buen lijado es invisible: pareja, sin marcas y respetando el sentido de la veta. Practicás con distintos granos y herramientas hasta dominar el proceso completo, sin comprometer la integridad de la pieza.</p>
       </div>
+    </div>
 
-      <div class="crs-stack-card" data-stack-index="3">
-        <div class="crs-stack-head">
-        <span class="crs-stack-num">04</span>
-        <h3 class="crs-stack-title">Tinturas y acabados</h3>
+    <div class="crs-materiales-divider"></div>
+
+    <div class="crs-materiales-seguridad">
+      <span class="crs-materiales-sublabel">Elementos de seguridad</span>
+      <div class="crs-materiales-seguridad-grid">
+        <div class="crs-materiales-seg-item">
+          <img src="assets/icono-antiparras.png" alt="">
+          <span>Antiparras</span>
         </div>
-        <p class="crs-stack-desc">El último paso es el que define el carácter de cada mueble. Aprendés a elegir y aplicar tinturas, pigmentos y acabados protectores, logrando un resultado parejo y duradero en cada tipo de madera.</p>
+        <div class="crs-materiales-seg-item">
+          <img src="assets/icono-mascara.png" alt="">
+          <span>Máscara</span>
+        </div>
+        <div class="crs-materiales-seg-item">
+          <img src="assets/icono-orejeras.png" alt="">
+          <span>Orejeras</span>
+        </div>
+        <div class="crs-materiales-seg-item">
+          <img src="assets/icono-guantes.png" alt="">
+          <span>Guantes</span>
+        </div>
       </div>
+    </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- GALERÍA -->
-<section class="crs-galeria" id="taller">
-  <div class="crs-galeria-header">
-    <span class="crs-galeria-eyebrow fade-up">El taller en imágenes</span>
-    <h2 class="crs-galeria-title fade-up fade-up-d1">
-      El ambiente donde <em>aprendemos el oficio</em>
-    </h2>
-  </div>
-  <div class="crs-galeria-grid">
-    <div class="crs-gal-item fade-up">
-      <img src="assets/taller-1.png" alt="Espacio de trabajo">
-      <div class="crs-gal-overlay"><span class="crs-gal-label">Espacio de trabajo</span></div>
-    </div>
-    <div class="crs-gal-item fade-up fade-up-d1">
-      <img src="assets/taller-2.png" alt="Clase práctica">
-      <div class="crs-gal-overlay"><span class="crs-gal-label">Clase práctica</span></div>
-    </div>
-    <div class="crs-gal-item fade-up fade-up-d2">
-      <img src="assets/taller-3.png" alt="Proceso de lijado">
-      <div class="crs-gal-overlay"><span class="crs-gal-label">Proceso de lijado</span></div>
-    </div>
-    <div class="crs-gal-item fade-up fade-up-d1">
-      <img src="assets/taller-4.png" alt="Supervisión completa">
-      <div class="crs-gal-overlay"><span class="crs-gal-label">Supervisión completa</span></div>
-    </div>
-    <div class="crs-gal-item fade-up fade-up-d2">
-      <img src="assets/taller-5.png" alt="Proceso de restauración">
-      <div class="crs-gal-overlay"><span class="crs-gal-label">Proceso de restauración</span></div>
-    </div>
   </div>
 </section>
 
