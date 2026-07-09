@@ -1230,10 +1230,10 @@ nav.scrolled {
   color: rgba(51,33,22,0.6);
 }
 
-/* ─── INSCRIPCION ───────────────────────────── */
+/* ─── LISTO? / CTA FINAL ─────────────────────── */
 .crs-cta-final {
-  background: var(--near-black);
-  padding: 220px 80px 160px;
+  background: #e5e1d6;
+  padding: 140px 40px 110px;
   text-align: center;
 }
 .crs-cta-final-inner {
@@ -1243,31 +1243,21 @@ nav.scrolled {
 .crs-cta-final-eyebrow {
   display: block;
   font-family: 'Raleway', sans-serif;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 600;
-  letter-spacing: 0.28em;
+  letter-spacing: 0;
   text-transform: uppercase;
-  color: rgba(239,236,227,0.35);
-  margin-bottom: 24px;
+  color: rgba(57,47,40,0.4);
+  margin-bottom: 22px;
 }
 .crs-cta-final-heading {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size: clamp(36px, 4.5vw, 52px);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  color: var(--cream);
-}
-.crs-cta-final-sub {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
-  font-style: italic;
-  font-size: clamp(32px, 3.9vw, 46px);
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.3;
   letter-spacing: -0.05em;
-  color: rgba(239,236,227,0.7);
-  margin-top: 4px;
-  margin-bottom: 48px;
+  color: var(--espresso);
+  margin-bottom: 40px;
 }
 .crs-cta-final-btn {
   display: inline-flex;
@@ -1278,169 +1268,140 @@ nav.scrolled {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--cream);
-  border: 1px solid rgba(239,236,227,0.4);
+  color: var(--espresso);
+  background: transparent;
+  border: 1px solid rgba(57,47,40,0.35);
   border-radius: 40px;
   padding: 16px 40px;
   text-decoration: none;
-  transition: background 0.25s ease, border-color 0.25s ease;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 .crs-cta-final-btn:hover {
-  background: rgba(239,236,227,0.08);
-  border-color: rgba(239,236,227,0.7);
+  background: var(--espresso);
+  border-color: var(--espresso);
+  color: var(--cream);
 }
 
-/* ─── FOOTER ────────────────────────────────── */
-/* ─── CONTACTO ──────────────────────────────── */
+/* ─── FOOTER / CONTACTO ──────────────────────── */
 .crs-contact {
-  background: var(--near-black);
+  background: var(--cream);
+}
+.crs-contact-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 80px;
 }
 .crs-contact-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: 60px;
-  padding: 110px 80px 90px;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 90px 0 64px;
 }
-.crs-contact-tagline {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  font-style: italic;
-  font-size: clamp(26px, 2.4vw, 34px);
-  line-height: 1.4;
-  color: rgba(239,236,227,0.55);
-  margin-bottom: 56px;
-  max-width: 480px;
+.crs-contact-brand {
+  display: inline-block;
+  margin-bottom: 18px;
+}
+.crs-contact-brand img {
+  display: block;
+  width: 150px;
+  height: auto;
+}
+.crs-contact-desc {
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(57,47,40,0.6);
+  max-width: 320px;
 }
 .crs-contact-links {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1.6fr;
   gap: 24px;
-  max-width: 480px;
 }
 .crs-contact-col {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 16px;
+}
+.crs-contact-col-label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--espresso);
+  margin-bottom: 6px;
 }
 .crs-contact-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   width: fit-content;
   font-family: 'Raleway', sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--cream);
+  color: rgba(57,47,40,0.65);
   text-decoration: none;
 }
 .crs-contact-link svg {
-  opacity: 1;
-  transform: translateX(0);
+  opacity: 0;
+  transform: translateX(-4px);
   transition: opacity 0.25s ease, transform 0.25s ease;
+  flex-shrink: 0;
 }
 .crs-contact-link:hover svg {
   opacity: 1;
-  transform: translateX(2px);
+  transform: translateX(0);
 }
 .crs-contact-link:hover span {
-  opacity: 0.7;
+  color: var(--espresso);
 }
 .crs-contact-link span {
-  transition: opacity 0.25s ease;
+  transition: color 0.25s ease;
+}
+.crs-contact-link--email {
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
-.crs-contact-right {
-  text-align: right;
+.crs-contact-divider {
+  border-top: 1px solid rgba(57,47,40,0.14);
 }
-.crs-contact-title {
+.crs-contact-hablemos {
+  padding: 44px 0;
+}
+.crs-contact-hablemos-title {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(84px, 10.5vw, 148px);
+  font-size: clamp(80px, 10vw, 132px);
   line-height: 1;
-  color: var(--cream);
-  margin-bottom: 48px;
-}
-.crs-contact-title-link {
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
-  transition: opacity 0.25s ease;
-}
-.crs-contact-title-link:hover {
-  opacity: 0.7;
-}
-.crs-contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  align-items: flex-end;
-}
-.crs-contact-info-label {
-  display: block;
-  font-family: 'Raleway', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(239,236,227,0.35);
-  margin-bottom: 4px;
-}
-.crs-contact-info-value {
-  font-family: 'Raleway', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--cream);
+  color: var(--espresso);
 }
 
 .crs-contact-bottom {
-  border-top: 1px solid rgba(239,236,227,0.1);
-  padding: 28px 80px;
+  padding: 24px 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  justify-content: flex-start;
+  gap: 40px;
 }
-.crs-contact-logo {
-  display: inline-flex;
-  width: 52px;
-  aspect-ratio: 1067.59 / 366.67;
-  background-color: rgba(239,236,227,0.4);
-  -webkit-mask-image: url('assets/raiz-logo.svg');
-  mask-image: url('assets/raiz-logo.svg');
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: left center;
-  mask-position: left center;
-}
-.crs-contact-bottom-links {
-  display: flex;
-  gap: 28px;
-}
-.crs-contact-bottom-links a {
+.crs-contact-copy,
+.crs-contact-bottom-center,
+.crs-contact-bottom-right {
+  font-family: 'Raleway', sans-serif;
   font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(239,236,227,0.4);
-  text-decoration: none;
-  transition: color 0.25s ease;
-}
-.crs-contact-bottom-links a:hover {
-  color: var(--cream);
-}
-.crs-contact-copy {
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  color: rgba(239,236,227,0.25);
+  color: rgba(57,47,40,0.45);
   white-space: nowrap;
+  text-align: left;
 }
+
 
 /* ─── ANIMATIONS ────────────────────────────── */
 .fade-up {
@@ -1504,12 +1465,12 @@ nav.scrolled {
   .crs-testimonios-quote { font-size: 44px; }
   .crs-testimonios-arrow { width: 32px; height: 32px; }
 
-  .crs-cta-final { padding: 100px 20px; }
+  .crs-cta-final { padding: 90px 20px 70px; }
 
-  .crs-contact-inner { grid-template-columns: 1fr; gap: 56px; padding: 70px 20px 60px; }
-  .crs-contact-right { text-align: left; }
-  .crs-contact-info { align-items: flex-start; }
-  .crs-contact-links { grid-template-columns: 1fr 1fr; max-width: 100%; }
-  .crs-contact-bottom { flex-direction: column; gap: 16px; padding: 24px 20px; text-align: center; }
-  .crs-contact-bottom-links { gap: 20px; }
+  .crs-contact-wrap { padding: 0 20px; }
+  .crs-contact-inner { grid-template-columns: 1fr; gap: 44px; padding: 64px 0 48px; }
+  .crs-contact-links { grid-template-columns: 1fr 1fr; }
+  .crs-contact-link--email { white-space: normal; }
+  .crs-contact-hablemos { padding: 36px 0; }
+  .crs-contact-bottom { flex-direction: column; align-items: flex-start; gap: 10px; padding: 24px 0; }
 }
