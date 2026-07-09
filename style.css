@@ -881,7 +881,7 @@ nav.scrolled {
   display: block;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #8c8c8c;
@@ -1148,8 +1148,8 @@ nav.scrolled {
 .crs-testimonios-carousel {
   display: flex;
   align-items: center;
-  gap: 31px;
-  max-width: 1160px;
+  gap: 35px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 .crs-testimonios-arrow {
@@ -1157,8 +1157,8 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 51px;
-  height: 51px;
+  width: 57px;
+  height: 57px;
   border-radius: 50%;
   border: none;
   background: none;
@@ -1170,8 +1170,8 @@ nav.scrolled {
   opacity: 0.6;
 }
 .crs-testimonios-arrow svg {
-  width: 28px;
-  height: 28px;
+  width: 31px;
+  height: 31px;
 }
 
 .crs-testimonios-viewport {
@@ -1180,34 +1180,34 @@ nav.scrolled {
 }
 .crs-testimonios-track {
   display: flex;
-  gap: 35px;
+  gap: 39px;
   transition: transform 0.45s ease;
 }
 .crs-testimonios-card {
-  flex: 0 0 calc((100% - 70px) / 3);
+  flex: 0 0 calc((100% - 78px) / 3);
   box-sizing: border-box;
   aspect-ratio: 3 / 2;
   border: 1px solid rgba(51,33,22,0.25);
-  border-radius: 27px;
-  padding: 33px 35px;
+  border-radius: 30px;
+  padding: 37px 39px;
   display: flex;
   flex-direction: column;
 }
 .crs-testimonios-quote {
   font-family: Georgia, 'Cormorant Garamond', serif;
   font-weight: 700;
-  font-size: 70px;
+  font-size: 78px;
   line-height: 0.6;
   color: #332116;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 .crs-testimonios-text {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.4;
   color: #332116;
-  margin: 0 0 20px;
+  margin: 0 0 22px;
 }
 .crs-testimonios-author {
   margin-top: auto;
@@ -1218,13 +1218,13 @@ nav.scrolled {
 .crs-testimonios-name {
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 17px;
   color: #332116;
 }
 .crs-testimonios-location {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: rgba(51,33,22,0.6);
@@ -1264,9 +1264,9 @@ nav.scrolled {
   align-items: center;
   justify-content: center;
   font-family: 'Raleway', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--espresso);
   background: transparent;
@@ -1287,9 +1287,9 @@ nav.scrolled {
   background: var(--cream);
 }
 .crs-contact-wrap {
-  max-width: 1400px;
+  max-width: 1660px;
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 0 80px 0 14px;
 }
 .crs-contact-inner {
   display: grid;
@@ -1377,7 +1377,7 @@ nav.scrolled {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(80px, 10vw, 132px);
+  font-size: clamp(104px, 13vw, 172px);
   line-height: 1;
   color: var(--espresso);
 }
@@ -1386,8 +1386,8 @@ nav.scrolled {
   padding: 24px 0;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 40px;
+  justify-content: space-between;
+  gap: 24px;
 }
 .crs-contact-copy,
 .crs-contact-bottom-center,
@@ -1399,7 +1399,16 @@ nav.scrolled {
   text-transform: uppercase;
   color: rgba(57,47,40,0.45);
   white-space: nowrap;
+}
+.crs-contact-copy {
   text-align: left;
+}
+.crs-contact-bottom-center {
+  text-align: center;
+  flex: 1;
+}
+.crs-contact-bottom-right {
+  text-align: right;
 }
 
 
@@ -1473,4 +1482,5 @@ nav.scrolled {
   .crs-contact-link--email { white-space: normal; }
   .crs-contact-hablemos { padding: 36px 0; }
   .crs-contact-bottom { flex-direction: column; align-items: flex-start; gap: 10px; padding: 24px 0; }
+  .crs-contact-bottom-center, .crs-contact-bottom-right { text-align: left; }
 }

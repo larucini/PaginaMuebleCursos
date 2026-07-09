@@ -186,7 +186,7 @@ function initTeamSwap() {
       name: 'Tomás Ferrero',
       photo: 'assets/tomas-ferrero.png',
       role: 'Restaurador<br>de mobiliario',
-      specialty: 'Restauración estructural<br>y ebanistería tradicional',
+      specialty: 'Restauración estructural<br>y ebanistería tradicional.',
       stats: [
         { num: '+10', label: 'De experiencia' },
         { num: '+8', label: 'Certificaciones' },
@@ -196,7 +196,7 @@ function initTeamSwap() {
       name: 'Lucía Bianchi',
       photo: 'assets/lucia-bianchi.png',
       role: 'Diseñadora industrial',
-      specialty: 'Diseño de mobiliario<br>funcional y renovación',
+      specialty: 'Diseño de mobiliario<br>funcional y renovación.',
       stats: [
         { num: '+8', label: 'De experiencia' },
         { num: '+6', label: 'Certificaciones' },
@@ -206,7 +206,7 @@ function initTeamSwap() {
       name: 'Santiago Ruíz',
       photo: 'assets/santiago-ruiz.png',
       role: 'Ebanista',
-      specialty: 'Maderas macizas<br>y ebanistería fina',
+      specialty: 'Maderas macizas<br>y ebanistería fina.',
       stats: [
         { num: '+12', label: 'De experiencia' },
         { num: '+9', label: 'Certificaciones' },
@@ -216,7 +216,7 @@ function initTeamSwap() {
       name: 'Valentina Rojas',
       photo: 'assets/valentina-rojas.png',
       role: 'Acabados y tinturas',
-      specialty: 'Acabados naturales<br>y tinturas artesanales',
+      specialty: 'Acabados naturales<br>y tinturas artesanales.',
       stats: [
         { num: '+7', label: 'De experiencia' },
         { num: '+5', label: 'Certificaciones' },
@@ -226,7 +226,7 @@ function initTeamSwap() {
       name: 'Ignacio Montes',
       photo: 'assets/ignacio-montes.png',
       role: 'Tallista',
-      specialty: 'Tallado ornamental<br>y piezas antiguas',
+      specialty: 'Tallado ornamental<br>y piezas antiguas.',
       stats: [
         { num: '+9', label: 'De experiencia' },
         { num: '+7', label: 'Certificaciones' },
