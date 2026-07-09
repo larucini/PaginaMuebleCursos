@@ -69,7 +69,7 @@ nav.scrolled {
   font-family: 'Raleway', sans-serif;
   font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--espresso);
   text-decoration: none;
