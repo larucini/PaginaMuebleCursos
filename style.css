@@ -253,23 +253,23 @@ nav.scrolled {
 .crs-info-band {
   background: var(--cream);
   padding: 40px 60px 120px;
-  max-width: 1220px;
+  max-width: 1280px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 18px;
 }
 .crs-info-item {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(57,47,40,0.16);
-  border-radius: 20px;
-  padding: 22px 24px 20px;
+  border-radius: 22px;
+  padding: 24px 26px 22px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 10px;
+  gap: 11px;
   background: var(--cream);
   box-shadow: 0 10px 24px rgba(57,47,40,0.06);
   transform: translateY(0);
@@ -296,15 +296,15 @@ nav.scrolled {
   left: 130%;
 }
 .crs-info-icon {
-  height: 40px;
+  height: 44px;
   width: auto;
-  max-width: 64px;
+  max-width: 70px;
   object-fit: contain;
   margin-bottom: 2px;
 }
 .crs-info-title {
   font-family: 'Raleway', sans-serif;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -312,7 +312,7 @@ nav.scrolled {
 }
 .crs-info-desc {
   font-family: 'Raleway', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   color: #332116;
   white-space: nowrap;
@@ -348,7 +348,7 @@ nav.scrolled {
 .crs-programa {
   background: var(--cream);
   padding: 110px 60px 120px;
-  max-width: 900px;
+  max-width: 950px;
   margin: 0 auto;
 }
 .crs-programa-header {
@@ -385,8 +385,8 @@ nav.scrolled {
 .crs-programa-list {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  max-width: 620px;
+  gap: 20px;
+  max-width: 682px;
   margin: 0 auto;
 }
 .crs-programa-entry {
@@ -396,11 +396,11 @@ nav.scrolled {
 .crs-programa-item {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 26px;
   width: 100%;
   border: 1px solid rgba(57,47,40,0.20);
   border-radius: 999px;
-  padding: 10px 28px 10px 10px;
+  padding: 11px 31px 11px 11px;
   background: var(--cream);
   font: inherit;
   text-align: left;
@@ -419,20 +419,20 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 72px;
-  height: 52px;
+  width: 79px;
+  height: 57px;
   border-radius: 999px;
   background: var(--espresso);
   color: var(--cream);
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 27px;
+  font-size: 30px;
 }
 .crs-programa-text {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 31px;
   color: #332116;
 }
 
@@ -443,41 +443,41 @@ nav.scrolled {
   overflow: hidden;
   margin-top: 0;
   border: 1px solid rgba(57,47,40,0.20);
-  border-radius: 20px;
+  border-radius: 22px;
   background: var(--cream);
   box-shadow: inset 0 0 50px rgba(57,47,40,0.06);
   transition: max-height 0.45s ease, opacity 0.35s ease, margin-top 0.45s ease;
 }
 .crs-programa-entry.is-open .crs-programa-panel {
-  max-height: 320px;
+  max-height: 352px;
   opacity: 1;
-  margin-top: 18px;
+  margin-top: 20px;
 }
 .crs-programa-panel-inner {
-  padding: 32px 44px 30px;
+  padding: 35px 48px 33px;
 }
 .crs-programa-desc {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.6;
   color: rgba(57,47,40,0.75);
-  margin: 0 0 20px;
+  margin: 0 0 22px;
 }
 .crs-programa-keywords {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 11px;
 }
 .crs-programa-keyword {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 14px;
   color: #332116;
   border: 1px solid rgba(57,47,40,0.22);
   border-radius: 999px;
-  padding: 6px 18px;
+  padding: 7px 20px;
 }
 
 
@@ -973,8 +973,8 @@ nav.scrolled {
 /* ── Equipo: nombres + foto + datos con hover-swap ── */
 .crs-team {
   display: grid;
-  grid-template-columns: 1fr 340px 1fr;
-  gap: 64px;
+  grid-template-columns: 1fr 357px 1fr;
+  gap: 67px;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -984,22 +984,22 @@ nav.scrolled {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 34px;
+  gap: 36px;
 }
 .crs-team-name {
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  width: 328px;
+  width: 344px;
   background-color: var(--cream);
   border: 1px solid #332116;
-  border-radius: 50px;
-  padding: 8px 25px;
+  border-radius: 53px;
+  padding: 8px 26px;
   cursor: pointer;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size: 33px;
+  font-size: 35px;
   letter-spacing: -0.05em;
   white-space: nowrap;
   color: #332116;
@@ -1036,23 +1036,23 @@ nav.scrolled {
 .crs-team-role {
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
-  font-size: clamp(30px, 2.6vw, 37px);
+  font-size: clamp(32px, 2.7vw, 39px);
   line-height: 1.15;
   letter-spacing: -0.05em;
   color: #332116;
-  margin: 0 0 34px;
+  margin: 0 0 36px;
   transition: opacity 0.2s ease;
 }
 .crs-team-specialty {
-  margin-top: 50px;
-  margin-bottom: 39px;
+  margin-top: 53px;
+  margin-bottom: 41px;
   transition: opacity 0.2s ease;
 }
 .crs-team-specialty-label {
   display: block;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #8c8c8c;
@@ -1061,15 +1061,15 @@ nav.scrolled {
 .crs-team-specialty-text {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size: 23px;
-  line-height: 1.4;
+  font-size: 24px;
+  line-height: 1.15;
   color: #332116;
-  max-width: 345px;
+  max-width: 362px;
 }
 .crs-team-stats {
   display: flex;
   align-items: stretch;
-  gap: 28px;
+  gap: 29px;
   transition: opacity 0.2s ease;
 }
 .crs-team-stat {
@@ -1077,21 +1077,22 @@ nav.scrolled {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 9px;
+  gap: 14px;
 }
 .crs-team-stat-num {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
-  font-size: 46px;
+  font-size: 48px;
   line-height: 1;
   color: #332116;
 }
 .crs-team-stat-label {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 18px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  white-space: nowrap;
   color: #332116;
 }
 .crs-team-stat-divider {
