@@ -129,6 +129,16 @@ nav.scrolled {
   align-items: flex-start;
   margin-top: 105px;
 }
+.crs-hero-eyebrow {
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: var(--espresso);
+  margin-bottom: 14px;
+}
 .crs-hero-title {
   margin: 0 0 24px;
   line-height: 0.95;
@@ -791,7 +801,13 @@ nav.scrolled {
   border-radius: 50%;
   pointer-events: none;
 }
+.crs-mat-hotspot--wood .crs-mat-hotspot-ring {
+  width: 22px;
+  height: 22px;
+}
 .crs-mat-hotspot--wood .crs-mat-hotspot-dot {
+  width: 12px;
+  height: 12px;
   background: #efece3;
   box-shadow: none;
 }
@@ -802,7 +818,7 @@ nav.scrolled {
   position: absolute;
   bottom: 100%;
   left: 50%;
-  width: 1px;
+  width: 2.5px;
   height: 44px;
   background: rgba(51,33,22,0.45);
   transform: translateX(-50%) scaleY(0);
@@ -834,6 +850,19 @@ nav.scrolled {
 }
 .crs-mat-hotspot:hover .crs-mat-hotspot-card {
   opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.crs-mat-hotspot--wood .crs-mat-hotspot-line {
+  bottom: auto;
+  top: 100%;
+  transform-origin: top;
+}
+.crs-mat-hotspot--wood .crs-mat-hotspot-card {
+  bottom: auto;
+  top: calc(100% + 44px);
+  transform: translateX(-50%) translateY(-6px);
+}
+.crs-mat-hotspot--wood:hover .crs-mat-hotspot-card {
   transform: translateX(-50%) translateY(0);
 }
 
@@ -908,89 +937,83 @@ nav.scrolled {
 }
 
 /* ─── INSTRUCTORES ──────────────────────────── */
-.crs-instructores {
+/* ─── EL EQUIPO ──────────────────────────────── */
+.crs-equipo {
   background: var(--cream);
-  padding: 160px 80px;
+  padding: 140px 80px 130px;
 }
-.crs-instructores-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.crs-instructores-header {
-  margin-bottom: 64px;
-  border-bottom: 1px solid rgba(57,47,40,0.12);
-  padding-bottom: 40px;
+.crs-equipo-header {
   text-align: center;
+  margin-bottom: 72px;
 }
-.crs-instructores-title {
+.crs-equipo-label {
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #332116;
+  margin-bottom: 10px;
+}
+.crs-equipo-title {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size: clamp(22px, 2.6vw, 42px);
+  font-size: clamp(32px, 3.8vw, 46px);
   letter-spacing: -0.02em;
-  color: var(--espresso);
-  white-space: nowrap;
+  color: #332116;
 }
-.crs-instructores-title em {
+.crs-equipo-title em {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 1.3em;
+  font-weight: 500;
 }
 
 /* ── Equipo: nombres + foto + datos con hover-swap ── */
 .crs-team {
   display: grid;
-  grid-template-columns: auto 380px 1fr;
+  grid-template-columns: 1fr 300px 1fr;
   gap: 56px;
-  align-items: start;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .crs-team-names {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding-top: 8px;
+  align-items: flex-end;
+  gap: 18px;
 }
 .crs-team-name {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 260px;
   background: none;
-  border: none;
-  padding: 8px 0;
+  border: 1px solid rgba(51,33,22,0.3);
+  border-radius: 40px;
+  padding: 10px 20px;
   cursor: pointer;
-  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 26px;
   white-space: nowrap;
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  font-style: italic;
-  font-size: 52px;
-  line-height: 1.15;
-  color: var(--espresso);
-  opacity: 0.38;
-  transition: opacity 0.3s ease;
+  color: #332116;
+  opacity: 0.55;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
 }
 .crs-team-name:hover,
 .crs-team-name.is-active {
   opacity: 1;
-}
-.crs-team-arrow {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-  opacity: 0;
-  transform: translateX(-6px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.crs-team-name:hover .crs-team-arrow,
-.crs-team-name.is-active .crs-team-arrow {
-  opacity: 1;
-  transform: translateX(0);
+  background-color: #e5e1d6;
 }
 
 .crs-team-photo {
   width: 100%;
   aspect-ratio: 3 / 4;
-  border: 1px solid rgba(57,47,40,0.22);
+  border: 1px solid rgba(51,33,22,0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1006,59 +1029,69 @@ nav.scrolled {
 }
 
 .crs-team-details {
-  padding-top: 0;
+  display: flex;
+  flex-direction: column;
 }
 .crs-team-role {
-  display: inline-block;
-  width: fit-content;
-  max-width: 100%;
-  background: var(--cream);
-  color: var(--espresso);
-  border: 1px solid rgba(57,47,40,0.16);
-  border-radius: 10px;
   font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 17px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  padding: 16px 24px;
-  box-shadow: inset 0 0 24px rgba(57,47,40,0.10);
+  font-weight: 600;
+  font-size: clamp(26px, 2.2vw, 32px);
+  line-height: 1.15;
+  color: #332116;
+  margin: 0 0 30px;
   transition: opacity 0.2s ease;
+}
+.crs-team-specialty {
+  margin-bottom: 34px;
+  transition: opacity 0.2s ease;
+}
+.crs-team-specialty-label {
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8c8c8c;
+  margin-bottom: 10px;
+}
+.crs-team-specialty-text {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #332116;
+  max-width: 300px;
 }
 .crs-team-stats {
   display: flex;
-  flex-direction: column;
+  align-items: stretch;
+  gap: 24px;
   transition: opacity 0.2s ease;
 }
 .crs-team-stat {
   display: flex;
-  align-items: baseline;
-  gap: 24px;
-  padding: 20px 24px;
-  border-bottom: 1px solid rgba(57,47,40,0.14);
-  transition: opacity 0.2s ease;
+  flex-direction: column;
+  gap: 8px;
 }
 .crs-team-stat-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 34px;
-  color: var(--espresso);
-  width: 150px;
-  flex-shrink: 0;
-  text-align: right;
-}
-.crs-team-stat-num.is-word {
-  font-style: italic;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1;
+  color: #332116;
 }
 .crs-team-stat-label {
   font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 400;
+  font-size: 12px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--espresso);
-  opacity: 0.55;
-  line-height: 1.5;
+  color: #332116;
+}
+.crs-team-stat-divider {
+  width: 1px;
+  background: rgba(51,33,22,0.2);
 }
 .crs-team-swap-fade {
   opacity: 0;
@@ -1322,19 +1355,15 @@ nav.scrolled {
   .crs-materiales-divider { display: none; }
   .crs-materiales-seguridad-grid { flex-wrap: wrap; justify-content: center; }
 
-  .crs-instructores { padding: 80px 20px; }
+  .crs-equipo { padding: 80px 20px; }
   .crs-team { grid-template-columns: 1fr; gap: 24px; justify-items: center; }
-  .crs-team-names { flex-direction: column; align-items: center; text-align: center; gap: 2px; width: 100%; padding-top: 0; }
-  .crs-team-name { font-size: 26px; justify-content: center; white-space: normal; padding: 6px 0; }
-  .crs-team-photo { aspect-ratio: 2 / 3; width: 100%; max-width: 220px; margin: 0 auto; border: none; }
-  .crs-team-photo-img { height: 100%; object-fit: contain; object-position: center; }
-  .crs-team-details { width: 100%; display: flex; flex-direction: column; align-items: center; }
-  .crs-team-role { font-size: 10px; letter-spacing: 0.03em; padding: 8px 14px; white-space: normal; text-align: center; }
-  .crs-team-stats { width: fit-content; margin: 0 auto; }
-  .crs-team-stat { padding: 12px 4px; gap: 12px; justify-content: flex-start; }
-  .crs-team-stat-num { width: 70px; font-size: 24px; }
-  .crs-team-stat-num.is-word { font-size: 16px; }
-  .crs-team-stat-label { font-size: 11px; }
+  .crs-team-names { flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; width: 100%; }
+  .crs-team-name { width: auto; font-size: 14px; padding: 10px 16px; }
+  .crs-team-photo { aspect-ratio: 3 / 4; width: 100%; max-width: 260px; margin: 0 auto; }
+  .crs-team-details { width: 100%; align-items: center; text-align: center; }
+  .crs-team-role { font-size: 22px; }
+  .crs-team-specialty-text { max-width: 100%; }
+  .crs-team-stats { justify-content: center; }
 
   .crs-cta-final { padding: 100px 20px; }
 

@@ -175,48 +175,70 @@ function initTeamSwap() {
   const root = document.getElementById('crs-team');
   if (!root) return;
 
-  const nameButtons = Array.from(root.querySelectorAll('.crs-team-name'));
-  const photoEl     = document.getElementById('crs-team-photo-img');
-  const roleEl      = document.getElementById('crs-team-role');
-  const statsEl     = document.getElementById('crs-team-stats');
+  const nameButtons  = Array.from(root.querySelectorAll('.crs-team-name'));
+  const photoEl      = document.getElementById('crs-team-photo-img');
+  const roleEl       = document.getElementById('crs-team-role');
+  const specialtyEl  = document.getElementById('crs-team-specialty-text');
+  const statsEl      = document.getElementById('crs-team-stats');
 
   const instructors = [
     {
       name: 'Tomás Ferrero',
       photo: 'assets/tomas-ferrero.png',
-      role: 'Maestro restaurador de mobiliario',
+      role: 'Restaurador de mobiliario',
+      specialty: 'Restauración estructural y ebanistería tradicional',
       stats: [
-        { num: '+5', label: 'Años de<br>experiencia' },
-        { num: 'Especialista', label: 'en estructuras y<br>uniones tradicionales', word: true },
-        { num: '2019', label: 'Formando<br>restauradores' },
+        { num: '+10', label: 'De experiencia' },
+        { num: '+8', label: 'Certificaciones' },
       ],
     },
     {
       name: 'Lucía Bianchi',
       photo: 'assets/lucia-bianchi.png',
       role: 'Diseñadora industrial y restauradora',
+      specialty: 'Diseño de mobiliario funcional y renovación',
       stats: [
-        { num: '+8', label: 'Años de<br>experiencia' },
-        { num: 'Especialista', label: 'en diseño de<br>mobiliario funcional', word: true },
-        { num: '2017', label: 'Formando<br>restauradores' },
+        { num: '+8', label: 'De experiencia' },
+        { num: '+6', label: 'Certificaciones' },
       ],
     },
     {
       name: 'Santiago Ruíz',
       photo: 'assets/santiago-ruiz.png',
       role: 'Ebanista y especialista en maderas macizas',
+      specialty: 'Maderas macizas y ebanistería fina',
       stats: [
-        { num: '+10', label: 'Años de<br>experiencia' },
-        { num: 'Especialista', label: 'en maderas macizas<br>y ebanistería fina', word: true },
-        { num: '2016', label: 'Formando<br>restauradores' },
+        { num: '+12', label: 'De experiencia' },
+        { num: '+9', label: 'Certificaciones' },
+      ],
+    },
+    {
+      name: 'Valentina Rojas',
+      photo: 'assets/valentina-rojas.png',
+      role: 'Especialista en acabados y tinturas',
+      specialty: 'Acabados naturales y tinturas artesanales',
+      stats: [
+        { num: '+7', label: 'De experiencia' },
+        { num: '+5', label: 'Certificaciones' },
+      ],
+    },
+    {
+      name: 'Ignacio Montes',
+      photo: 'assets/ignacio-montes.png',
+      role: 'Tallista y restaurador de antigüedades',
+      specialty: 'Tallado ornamental y piezas antiguas',
+      stats: [
+        { num: '+9', label: 'De experiencia' },
+        { num: '+7', label: 'Certificaciones' },
       ],
     },
   ];
 
   function renderStats(stats) {
-    statsEl.innerHTML = stats.map(s => `
+    statsEl.innerHTML = stats.map((s, i) => `
+      ${i > 0 ? '<div class="crs-team-stat-divider"></div>' : ''}
       <div class="crs-team-stat">
-        <span class="crs-team-stat-num${s.word ? ' is-word' : ''}">${s.num}</span>
+        <span class="crs-team-stat-num">${s.num}</span>
         <span class="crs-team-stat-label">${s.label}</span>
       </div>
     `).join('');
@@ -227,14 +249,15 @@ function initTeamSwap() {
 
     const data = instructors[i];
     // Fundido corto para que el cambio de contenido no se sienta como un corte.
-    [photoEl, roleEl, statsEl].forEach(el => el.classList.add('crs-team-swap-fade'));
+    [photoEl, roleEl, specialtyEl, statsEl].forEach(el => el.classList.add('crs-team-swap-fade'));
 
     setTimeout(() => {
       photoEl.src = data.photo;
       photoEl.alt = data.name;
       roleEl.textContent = data.role;
+      specialtyEl.textContent = data.specialty;
       renderStats(data.stats);
-      [photoEl, roleEl, statsEl].forEach(el => el.classList.remove('crs-team-swap-fade'));
+      [photoEl, roleEl, specialtyEl, statsEl].forEach(el => el.classList.remove('crs-team-swap-fade'));
     }, 150);
   }
 
