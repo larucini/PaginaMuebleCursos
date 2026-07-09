@@ -942,7 +942,7 @@ nav.scrolled {
 /* ─── INSTRUCTORES ──────────────────────────── */
 /* ─── EL EQUIPO ──────────────────────────────── */
 .crs-equipo {
-  background: var(--cream);
+  background: linear-gradient(to bottom, rgba(57,47,40,0.08) 0, #efece3 220px);
   padding: 140px 80px 130px;
 }
 .crs-equipo-header {
@@ -1104,6 +1104,130 @@ nav.scrolled {
 }
 .crs-team-swap-fade {
   opacity: 0;
+}
+
+/* ─── TESTIMONIOS ────────────────────────────── */
+.crs-testimonios {
+  background: var(--cream);
+  padding: 130px 80px 140px;
+}
+.crs-testimonios-header {
+  text-align: center;
+  max-width: none;
+  margin: 0 auto 56px;
+}
+.crs-testimonios-label {
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #332116;
+  margin-bottom: 10px;
+}
+.crs-testimonios-title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: clamp(24px, 2.7vw, 40px);
+  letter-spacing: -0.02em;
+  color: #332116;
+  white-space: nowrap;
+  margin: 0 0 18px;
+}
+.crs-testimonios-sub {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.45;
+  color: #332116;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.crs-testimonios-carousel {
+  display: flex;
+  align-items: center;
+  gap: 31px;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.crs-testimonios-arrow {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  border: none;
+  background: none;
+  color: #332116;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.crs-testimonios-arrow:hover {
+  opacity: 0.6;
+}
+.crs-testimonios-arrow svg {
+  width: 28px;
+  height: 28px;
+}
+
+.crs-testimonios-viewport {
+  flex: 1;
+  overflow: hidden;
+}
+.crs-testimonios-track {
+  display: flex;
+  gap: 35px;
+  transition: transform 0.45s ease;
+}
+.crs-testimonios-card {
+  flex: 0 0 calc((100% - 70px) / 3);
+  box-sizing: border-box;
+  aspect-ratio: 3 / 2;
+  border: 1px solid rgba(51,33,22,0.25);
+  border-radius: 27px;
+  padding: 33px 35px;
+  display: flex;
+  flex-direction: column;
+}
+.crs-testimonios-quote {
+  font-family: Georgia, 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 0.6;
+  color: #332116;
+  margin-bottom: 18px;
+}
+.crs-testimonios-text {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.4;
+  color: #332116;
+  margin: 0 0 20px;
+}
+.crs-testimonios-author {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.crs-testimonios-name {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #332116;
+}
+.crs-testimonios-location {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(51,33,22,0.6);
 }
 
 /* ─── INSCRIPCION ───────────────────────────── */
@@ -1373,6 +1497,12 @@ nav.scrolled {
   .crs-team-role { font-size: 22px; }
   .crs-team-specialty-text { max-width: 100%; }
   .crs-team-stats { justify-content: center; }
+
+  .crs-testimonios { padding: 70px 20px 80px; }
+  .crs-testimonios-carousel { gap: 10px; }
+  .crs-testimonios-card { flex: 0 0 100%; aspect-ratio: auto; min-height: 200px; padding: 22px 22px; }
+  .crs-testimonios-quote { font-size: 44px; }
+  .crs-testimonios-arrow { width: 32px; height: 32px; }
 
   .crs-cta-final { padding: 100px 20px; }
 

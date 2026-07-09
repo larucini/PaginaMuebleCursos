@@ -270,3 +270,53 @@ function initTeamSwap() {
   renderStats(instructors[0].stats);
 }
 document.addEventListener('DOMContentLoaded', initTeamSwap);
+
+// ── Carrusel de testimonios ───────────────────
+function initTestimoniosCarousel() {
+  const track = document.getElementById('crs-testimonios-track');
+  if (!track) return;
+
+  const originalCards = Array.from(track.children);
+  const total = originalCards.length;
+
+  // Clonamos el set completo de cards y lo agregamos al final. Así, al llegar
+  // al final del recorrido "real", el carrusel sigue mostrando contenido
+  // (el clon, visualmente idéntico) en vez de saltar de golpe al principio.
+  originalCards.forEach(card => track.appendChild(card.cloneNode(true)));
+
+  const prevBtn = document.querySelector('.crs-testimonios-arrow-prev');
+  const nextBtn = document.querySelector('.crs-testimonios-arrow-next');
+  let index = 0;
+
+  function step() {
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    return track.children[0].getBoundingClientRect().width + gap;
+  }
+
+  function advance() {
+    index++;
+    track.style.transition = 'transform 0.45s ease';
+    track.style.transform = `translateX(-${index * step()}px)`;
+
+    // Cuando terminamos de recorrer el set original y entramos al clon
+    // (que se ve idéntico al principio), reseteamos el índice sin transición:
+    // el salto es imperceptible y el carrusel puede seguir avanzando siempre.
+    if (index >= total) {
+      setTimeout(() => {
+        track.style.transition = 'none';
+        index -= total;
+        track.style.transform = `translateX(-${index * step()}px)`;
+      }, 460);
+    }
+  }
+
+  // Ambas flechas solo avanzan: el carrusel nunca vuelve hacia atrás.
+  nextBtn.addEventListener('click', advance);
+  prevBtn.addEventListener('click', advance);
+
+  window.addEventListener('resize', () => {
+    track.style.transition = 'none';
+    track.style.transform = `translateX(-${index * step()}px)`;
+  });
+}
+document.addEventListener('DOMContentLoaded', initTestimoniosCarousel);
