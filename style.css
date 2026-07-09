@@ -67,9 +67,9 @@ nav.scrolled {
 }
 .nav-links a {
   font-family: 'Raleway', sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.18em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--espresso);
   text-decoration: none;
@@ -332,8 +332,8 @@ nav.scrolled {
   justify-content: center;
   font-family: 'Raleway', sans-serif;
   font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--espresso);
   border: 1px solid var(--espresso);
@@ -633,9 +633,9 @@ nav.scrolled {
   justify-content: center;
   width: 100%;
   font-family: 'Raleway', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
-  letter-spacing: 0;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #332116;
   background: transparent;
@@ -1265,8 +1265,8 @@ nav.scrolled {
   justify-content: center;
   font-family: 'Raleway', sans-serif;
   font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--espresso);
   background: transparent;
