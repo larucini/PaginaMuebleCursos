@@ -132,12 +132,15 @@ nav.scrolled {
 .crs-hero-eyebrow {
   display: block;
   font-family: 'Raleway', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 18px;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: var(--espresso);
   margin-bottom: 14px;
+}
+.crs-hero-eyebrow-num {
+  font-size: 1em;
 }
 .crs-hero-title {
   margin: 0 0 24px;
@@ -376,7 +379,7 @@ nav.scrolled {
 .crs-programa-sub {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.35;
   color: #332116;
   max-width: 640px;
@@ -419,15 +422,15 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 79px;
-  height: 57px;
+  width: 86px;
+  height: 62px;
   border-radius: 999px;
   background: var(--espresso);
   color: var(--cream);
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 30px;
+  font-size: 34px;
 }
 .crs-programa-text {
   font-family: 'Raleway', sans-serif;
@@ -526,9 +529,9 @@ nav.scrolled {
 .crs-inscripcion-sub {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 1.55;
-  color: rgba(239,236,227,0.62);
+  font-size: 18px;
+  line-height: 1.35;
+  color: #efece3;
 }
 .crs-inscripcion-grid {
   display: grid;
@@ -1061,8 +1064,8 @@ nav.scrolled {
 .crs-team-specialty-text {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 1.15;
+  font-size: 21px;
+  line-height: 1.1;
   color: #332116;
   max-width: 362px;
 }
