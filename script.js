@@ -185,8 +185,8 @@ function initTeamSwap() {
     {
       name: 'Tomás Ferrero',
       photo: 'assets/tomas-ferrero.png',
-      role: 'Restaurador de mobiliario',
-      specialty: 'Restauración estructural y ebanistería tradicional',
+      role: 'Restaurador<br>de mobiliario',
+      specialty: 'Restauración estructural<br>y ebanistería tradicional',
       stats: [
         { num: '+10', label: 'De experiencia' },
         { num: '+8', label: 'Certificaciones' },
@@ -195,8 +195,8 @@ function initTeamSwap() {
     {
       name: 'Lucía Bianchi',
       photo: 'assets/lucia-bianchi.png',
-      role: 'Diseñadora industrial y restauradora',
-      specialty: 'Diseño de mobiliario funcional y renovación',
+      role: 'Diseñadora industrial',
+      specialty: 'Diseño de mobiliario<br>funcional y renovación',
       stats: [
         { num: '+8', label: 'De experiencia' },
         { num: '+6', label: 'Certificaciones' },
@@ -205,8 +205,8 @@ function initTeamSwap() {
     {
       name: 'Santiago Ruíz',
       photo: 'assets/santiago-ruiz.png',
-      role: 'Ebanista y especialista en maderas macizas',
-      specialty: 'Maderas macizas y ebanistería fina',
+      role: 'Ebanista',
+      specialty: 'Maderas macizas<br>y ebanistería fina',
       stats: [
         { num: '+12', label: 'De experiencia' },
         { num: '+9', label: 'Certificaciones' },
@@ -215,8 +215,8 @@ function initTeamSwap() {
     {
       name: 'Valentina Rojas',
       photo: 'assets/valentina-rojas.png',
-      role: 'Especialista en acabados y tinturas',
-      specialty: 'Acabados naturales y tinturas artesanales',
+      role: 'Acabados y tinturas',
+      specialty: 'Acabados naturales<br>y tinturas artesanales',
       stats: [
         { num: '+7', label: 'De experiencia' },
         { num: '+5', label: 'Certificaciones' },
@@ -225,8 +225,8 @@ function initTeamSwap() {
     {
       name: 'Ignacio Montes',
       photo: 'assets/ignacio-montes.png',
-      role: 'Tallista y restaurador de antigüedades',
-      specialty: 'Tallado ornamental y piezas antiguas',
+      role: 'Tallista',
+      specialty: 'Tallado ornamental<br>y piezas antiguas',
       stats: [
         { num: '+9', label: 'De experiencia' },
         { num: '+7', label: 'Certificaciones' },
@@ -254,8 +254,8 @@ function initTeamSwap() {
     setTimeout(() => {
       photoEl.src = data.photo;
       photoEl.alt = data.name;
-      roleEl.textContent = data.role;
-      specialtyEl.textContent = data.specialty;
+      roleEl.innerHTML = data.role;
+      specialtyEl.innerHTML = data.specialty;
       renderStats(data.stats);
       [photoEl, roleEl, specialtyEl, statsEl].forEach(el => el.classList.remove('crs-team-swap-fade'));
     }, 150);
