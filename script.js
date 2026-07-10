@@ -290,13 +290,13 @@ function initTestimoniosCarousel() {
 
   function step() {
     const gap = parseFloat(getComputedStyle(track).gap) || 0;
-    return track.children[0].getBoundingClientRect().width + gap;
+    return Math.round(track.children[0].getBoundingClientRect().width + gap);
   }
 
   function advance() {
     index++;
     track.style.transition = 'transform 0.45s ease';
-    track.style.transform = `translateX(-${index * step()}px)`;
+    track.style.transform = `translateX(-${Math.round(index * step())}px)`;
 
     // Cuando terminamos de recorrer el set original y entramos al clon
     // (que se ve idéntico al principio), reseteamos el índice sin transición:
@@ -305,7 +305,7 @@ function initTestimoniosCarousel() {
       setTimeout(() => {
         track.style.transition = 'none';
         index -= total;
-        track.style.transform = `translateX(-${index * step()}px)`;
+        track.style.transform = `translateX(-${Math.round(index * step())}px)`;
       }, 460);
     }
   }
