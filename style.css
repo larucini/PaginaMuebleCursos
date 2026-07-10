@@ -48,7 +48,7 @@ nav.scrolled {
   transform: translateY(-50%);
   display: flex;
   align-items: center;
-  width: 56px;
+  width: 78px;
   aspect-ratio: 1067.59 / 366.67;
   background-color: #332116;
   -webkit-mask-image: url('assets/raiz-logo.svg');
