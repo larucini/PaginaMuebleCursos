@@ -4,6 +4,15 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
 }, { passive: true });
 
+// ── Nav: la línea bajo la palabra clickeada se mantiene ──
+const navLinks = document.querySelectorAll('.nav-links a');
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
+
 // ── Fade-up on scroll ───────────────────────
 const fadeEls = document.querySelectorAll('.fade-up');
 const observer = new IntersectionObserver((entries) => {

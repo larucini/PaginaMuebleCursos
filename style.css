@@ -86,6 +86,8 @@ nav.scrolled {
 }
 .nav-links a:hover { color: var(--rust); }
 .nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--rust); }
+.nav-links a.active::after { width: 100%; }
 .nav-back {
   position: absolute;
   right: 48px;
@@ -1380,7 +1382,7 @@ nav.scrolled {
   transition: border-color 0.2s ease;
 }
 .crs-cta-final-input:focus {
-  border-color: #b24610;
+  border-color: #a3af8c;
 }
 .crs-cta-final-input::placeholder {
   color: rgba(51,33,22,0.55);
