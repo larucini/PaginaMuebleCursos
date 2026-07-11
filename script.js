@@ -395,3 +395,21 @@ function initInscripcionPillsTouch() {
   });
 }
 document.addEventListener('DOMContentLoaded', initInscripcionPillsTouch);
+
+// ── Hotspots de MATERIALES (herramientas y maderas): mismo fix táctil ──
+// El tooltip (línea + card) era pura :hover y nunca se mostraba en touch.
+function initMatHotspotsTouch() {
+  const hotspots = document.querySelectorAll('.crs-mat-hotspot');
+  const ANIM_MS = 1500; // más largo que las otras: acá hay texto para leer
+  hotspots.forEach(hotspot => {
+    let timer = null;
+    hotspot.addEventListener('touchstart', () => {
+      clearTimeout(timer);
+      hotspot.classList.remove('is-touched');
+      void hotspot.offsetWidth; // fuerza reflow
+      hotspot.classList.add('is-touched');
+      timer = setTimeout(() => hotspot.classList.remove('is-touched'), ANIM_MS);
+    }, { passive: true });
+  });
+}
+document.addEventListener('DOMContentLoaded', initMatHotspotsTouch);

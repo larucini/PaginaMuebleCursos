@@ -522,8 +522,8 @@ nav.scrolled {
   .crs-programa-sub-mobile { display: block; }
   .crs-programa-list { gap: 12px; }
   .crs-programa-item { gap: 14px; padding: 8px 18px 8px 8px; }
-  .crs-programa-num { width: 52px; height: 38px; font-size: 17px; }
-  .crs-programa-text { font-size: 16px; }
+  .crs-programa-num { width: 52px; height: 38px; font-size: 19px; }
+  .crs-programa-text { font-size: 18px; }
   .crs-programa-entry { gap: 10px; }
   .crs-programa-dot { margin-top: 21px; }
   .crs-programa-entry.is-open .crs-programa-panel { max-height: 420px; margin-top: 12px; }
@@ -929,7 +929,8 @@ nav.scrolled {
   background: #efece3;
   box-shadow: none;
 }
-.crs-mat-hotspot:hover .crs-mat-hotspot-dot {
+.crs-mat-hotspot:hover .crs-mat-hotspot-dot,
+.crs-mat-hotspot.is-touched .crs-mat-hotspot-dot {
   transform: scale(1.2);
 }
 .crs-mat-hotspot-line {
@@ -943,7 +944,8 @@ nav.scrolled {
   transform-origin: bottom;
   transition: transform 0.3s ease;
 }
-.crs-mat-hotspot:hover .crs-mat-hotspot-line {
+.crs-mat-hotspot:hover .crs-mat-hotspot-line,
+.crs-mat-hotspot.is-touched .crs-mat-hotspot-line {
   transform: translateX(-50%) scaleY(1);
 }
 .crs-mat-hotspot-card {
@@ -966,10 +968,12 @@ nav.scrolled {
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
-.crs-mat-hotspot:hover .crs-mat-hotspot-card {
+.crs-mat-hotspot:hover .crs-mat-hotspot-card,
+.crs-mat-hotspot.is-touched .crs-mat-hotspot-card {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
+.crs-mat-hotspot-card-mobile { display: none; }
 .crs-mat-hotspot--wood .crs-mat-hotspot-line {
   bottom: auto;
   top: 100%;
@@ -980,7 +984,8 @@ nav.scrolled {
   top: calc(100% + 44px);
   transform: translateX(-50%) translateY(-6px);
 }
-.crs-mat-hotspot--wood:hover .crs-mat-hotspot-card {
+.crs-mat-hotspot--wood:hover .crs-mat-hotspot-card,
+.crs-mat-hotspot--wood.is-touched .crs-mat-hotspot-card {
   transform: translateX(-50%) translateY(0);
 }
 
@@ -1603,7 +1608,7 @@ nav.scrolled {
   .crs-hero-eyebrow { font-size: 13px; margin-bottom: 10px; }
   .crs-hero-title-line { font-size: clamp(36px, 11vw, 48px); }
   .crs-hero-title-italic { font-size: clamp(44px, 13vw, 58px); }
-  .crs-hero-sub { font-size: 15px; line-height: 1.6; max-width: 100%; }
+  .crs-hero-sub { font-size: 18px; line-height: 1.6; max-width: 100%; }
   .crs-hero-sub-desktop { display: none; }
   .crs-hero-sub-mobile { display: block; }
   .crs-hero-marquee { width: 100%; height: 420px; max-height: none; }
@@ -1619,6 +1624,9 @@ nav.scrolled {
   .crs-materiales-header { margin-bottom: 40px; }
   .crs-materiales-tools { flex-wrap: wrap; gap: 28px; margin-bottom: 56px; }
   .crs-materiales-tools img { max-height: 110px; }
+  .crs-materiales-tools .crs-mat-hotspot-card { padding: 6px 11px; }
+  .crs-mat-hotspot-card-desktop { display: none; }
+  .crs-mat-hotspot-card-mobile { display: block; }
   .crs-materiales-bottom { flex-direction: column; align-items: center; gap: 36px; }
   .crs-materiales-divider { display: none; }
   .crs-materiales-seguridad-grid { flex-wrap: wrap; justify-content: center; }
