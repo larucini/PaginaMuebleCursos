@@ -132,7 +132,6 @@ function initHeroMarquee() {
       el.style.left = '50%';
     });
   });
-  marquee.addEventListener('touchstart', () => marquee.classList.add('is-paused'), { passive: true });
 
   slides.forEach((slide) => {
     const afterWrap = slide.querySelector('.crs-hero-slide-after-wrap');
@@ -152,13 +151,22 @@ function initHeroMarquee() {
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
       setSplit(clientX);
     }
-    function stopDrag() {
+    function stopDrag(e) {
       dragging = false;
       slide.classList.remove('is-dragging');
       window.removeEventListener('mousemove', onMove);
       window.removeEventListener('mouseup', stopDrag);
       window.removeEventListener('touchmove', onMove);
       window.removeEventListener('touchend', stopDrag);
+
+      // En touch no existe "mouseleave": el final del toque es la única señal
+      // de que la interacción terminó, así que acá reanudamos el loop y
+      // reseteamos el split al centro, igual que hace mouseleave en desktop.
+      if (e && e.type === 'touchend') {
+        marquee.classList.remove('is-paused');
+        afterWrap.style.clipPath = 'inset(0 50% 0 0)';
+        handle.style.left = '50%';
+      }
     }
     function startDrag(e) {
       dragging = true;
@@ -329,3 +337,61 @@ function initTestimoniosCarousel() {
   });
 }
 document.addEventListener('DOMContentLoaded', initTestimoniosCarousel);
+
+// ── Info cards del HERO: equivalente táctil del hover ──
+// En touch no existe mouseenter/mouseleave, así que el hover (elevación +
+// brillo) de las 4 cards (Modalidad/Duración/Nivel/Cupos) nunca se disparaba
+// en mobile. Un solo toque ahora dispara la animación completa sola, sin
+// necesidad de mantener el dedo apretado.
+function initInfoCardsTouch() {
+  const items = document.querySelectorAll('.crs-info-item');
+  const ANIM_MS = 900; // suficiente para que el lift (0.35s) y el brillo (0.9s) terminen
+  items.forEach(item => {
+    let timer = null;
+    item.addEventListener('touchstart', () => {
+      clearTimeout(timer);
+      // si ya estaba animando, reseteamos para poder re-disparar el brillo desde cero
+      item.classList.remove('is-touched');
+      void item.offsetWidth; // fuerza reflow
+      item.classList.add('is-touched');
+      timer = setTimeout(() => item.classList.remove('is-touched'), ANIM_MS);
+    }, { passive: true });
+  });
+}
+document.addEventListener('DOMContentLoaded', initInfoCardsTouch);
+
+// ── Elementos de seguridad (MATERIALES): mismo fix táctil que las info cards ──
+// El hover (fondo + translateY) tampoco se disparaba en touch. Un toque ahora
+// dispara la animación completa sola.
+function initSeguridadItemsTouch() {
+  const items = document.querySelectorAll('.crs-materiales-seg-item');
+  const ANIM_MS = 500; // el fondo (0.3s) y el translateY (0.25s) ya terminaron
+  items.forEach(item => {
+    let timer = null;
+    item.addEventListener('touchstart', () => {
+      clearTimeout(timer);
+      item.classList.remove('is-touched');
+      void item.offsetWidth; // fuerza reflow
+      item.classList.add('is-touched');
+      timer = setTimeout(() => item.classList.remove('is-touched'), ANIM_MS);
+    }, { passive: true });
+  });
+}
+document.addEventListener('DOMContentLoaded', initSeguridadItemsTouch);
+
+// ── Pills de INSCRIPCION (Nivel/Duración/Cupo/Ubicación): mismo fix táctil ──
+function initInscripcionPillsTouch() {
+  const items = document.querySelectorAll('.crs-inscripcion-pill');
+  const ANIM_MS = 400; // background/border (0.25s) y translateY (0.25s) ya terminaron
+  items.forEach(item => {
+    let timer = null;
+    item.addEventListener('touchstart', () => {
+      clearTimeout(timer);
+      item.classList.remove('is-touched');
+      void item.offsetWidth; // fuerza reflow
+      item.classList.add('is-touched');
+      timer = setTimeout(() => item.classList.remove('is-touched'), ANIM_MS);
+    }, { passive: true });
+  });
+}
+document.addEventListener('DOMContentLoaded', initInscripcionPillsTouch);
