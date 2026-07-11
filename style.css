@@ -1374,14 +1374,20 @@ nav.scrolled {
   font-weight: 400;
   color: #332116;
   background: var(--cream);
-  border: 2px solid transparent;
+  border: 3px solid transparent;
   border-radius: 40px;
   padding: 18px 28px;
   box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
   outline: none;
+  box-shadow: none;
   transition: border-color 0.2s ease;
 }
-.crs-cta-final-input:focus {
+.crs-cta-final-input:focus,
+.crs-cta-final-input:focus-visible {
+  outline: none;
+  box-shadow: none;
   border-color: #a3af8c;
 }
 .crs-cta-final-input::placeholder {
