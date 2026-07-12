@@ -383,6 +383,7 @@ nav.scrolled {
   color: #332116;
   margin: 0 0 18px;
 }
+.crs-programa-title-break { display: none; }
 .crs-programa-sub {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
@@ -520,6 +521,7 @@ nav.scrolled {
   .crs-programa-sub { font-size: 18px; }
   .crs-programa-sub-desktop { display: none; }
   .crs-programa-sub-mobile { display: block; }
+  .crs-programa-title-break { display: inline; }
   .crs-programa-list { gap: 12px; }
   .crs-programa-item { gap: 14px; padding: 8px 18px 8px 8px; }
   .crs-programa-num { width: 52px; height: 38px; font-size: 19px; }
@@ -561,6 +563,14 @@ nav.scrolled {
   letter-spacing: -0.05em;
   color: var(--cream);
   margin-bottom: 20px;
+}
+.crs-inscripcion-title-break { display: none; }
+.crs-inscripcion-title-italic {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.3em;
+  letter-spacing: -0.02em;
 }
 .crs-inscripcion-sub {
   font-family: 'Raleway', sans-serif;
@@ -831,6 +841,7 @@ nav.scrolled {
   .crs-inscripcion-header { margin-bottom: 40px; }
   .crs-inscripcion-sub-desktop { display: none; }
   .crs-inscripcion-sub-mobile { display: block; }
+  .crs-inscripcion-title-break { display: inline; }
   .crs-inscripcion-grid { grid-template-columns: 1fr; max-width: 100%; transform: none; }
   .crs-inscripcion-feature-text { font-size: 15px; }
   .crs-inscripcion-pills { flex-direction: column; }
@@ -1482,7 +1493,7 @@ nav.scrolled {
 }
 .crs-contact-links {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.6fr;
+  grid-template-columns: max-content max-content auto 1fr;
   gap: 24px;
 }
 .crs-contact-col {
@@ -1498,6 +1509,21 @@ nav.scrolled {
   text-transform: uppercase;
   color: var(--espresso);
   margin-bottom: 6px;
+}
+.crs-contact-credit-link {
+  display: inline-block;
+  width: fit-content;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #b24610;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+.crs-contact-credit-link:hover {
+  transform: scale(1.08);
 }
 .crs-contact-link {
   display: inline-flex;
