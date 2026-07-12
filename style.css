@@ -1513,6 +1513,7 @@ nav.scrolled {
 .crs-contact-credit-link {
   display: inline-block;
   width: fit-content;
+  margin-left: -14px;
   font-family: 'Raleway', sans-serif;
   font-size: 15px;
   font-weight: 700;
