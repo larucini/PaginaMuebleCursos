@@ -1685,6 +1685,7 @@ nav.scrolled {
   .crs-contact-inner { grid-template-columns: 1fr; gap: 44px; padding: 64px 0 48px; }
   .crs-contact-brand img { width: 100px; }
   .crs-contact-links { grid-template-columns: 1fr 1fr; }
+  .crs-contact-credit-link { margin-left: 0; }
   .crs-contact-link--email { white-space: normal; }
   .crs-contact-hablemos { padding: 36px 0; }
   .crs-contact-bottom { flex-direction: column; align-items: flex-start; gap: 10px; padding: 24px 0; }
